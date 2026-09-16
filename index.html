@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUHUI — Glow in the Dark Powder, Luminous Stones &amp; Photoluminescent Pigment Manufacturer</title>
+<meta name="description" content="Shandong Yuhui New Materials Co., Ltd. — factory-direct manufacturer of strontium aluminate glow powder, luminous stones and photoluminescent coatings. Batch tested, worldwide export from China.">
+<meta name="keywords" content="glow in the dark powder, luminous stone, photoluminescent pigment, strontium aluminate, glow powder manufacturer China, مسحوق متوهج">
+<meta property="og:title" content="YUHUI — Photoluminescent Materials Manufacturer">
+<meta property="og:description" content="Factory-direct glow powder, luminous stones and glow coatings from Shandong, China.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.yuhuiglow.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0b5fff; --deep:#0a2e6e; --navy:#0d1b33; --sky:#e8f1ff;
+    --line:#e3e9f2; --txt:#2a3648; --dim:#68778c; --accent:#00b3ff;
+    --glow:#00e0a4; --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--txt);background:#fff;line-height:1.65;overflow-x:hidden}
+  html[lang="ar"] body{font-family:"Cairo","Segoe UI",Tahoma,sans-serif;line-height:1.8}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  button{font-family:inherit}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 4vw}
+
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--glow));z-index:200;transition:width .1s linear}
+  [dir="rtl"] .progress{left:auto;right:0;background:linear-gradient(-90deg,var(--blue),var(--glow))}
+
+  .util{background:var(--navy);color:#b9c8e2;font-size:13px}
+  .util .wrap{display:flex;justify-content:space-between;padding:7px 4vw;gap:16px}
+  .util a{color:#fff;margin-inline-start:20px;transition:.2s}
+  .util a:hover{color:var(--accent)}
+  @media(max-width:760px){.util span:first-child{display:none}.util .wrap{justify-content:center}}
+
+  header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(10,30,70,.05)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px;gap:20px}
+  .brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+  .brand img{height:56px;border-radius:8px}
+  .brand .bt{line-height:1.25}
+  .brand .b1{font-size:21px;font-weight:800;color:var(--deep);letter-spacing:1px;display:block}
+  .brand .b2{font-size:10.5px;color:var(--dim);letter-spacing:.3px}
+  html[lang="ar"] .brand .b1{letter-spacing:0;font-size:20px}
+  nav{display:flex;gap:22px;align-items:center;flex:1;justify-content:flex-end}
+  nav a{color:var(--txt);font-size:14.5px;font-weight:600;position:relative;padding-bottom:6px;white-space:nowrap}
+  nav a.on,nav a:hover{color:var(--blue)}
+  nav a::after{content:"";position:absolute;inset-inline-start:0;inset-inline-end:100%;bottom:0;height:2px;background:var(--blue);border-radius:2px;transition:inset-inline-end .25s}
+  nav a:hover::after{inset-inline-end:0}
+  .quote{background:var(--blue);color:#fff!important;padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.25s;display:inline-block}
+  .quote:hover{background:var(--deep);transform:translateY(-1px);box-shadow:0 8px 20px rgba(11,95,255,.3)}
+  .quote::after{display:none}
+  .nav-right{display:flex;align-items:center;gap:14px;flex:0 0 auto}
+
+  .lang-switch{display:inline-flex;background:var(--sky);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
+  .lang-switch button{background:none;border:none;padding:6px 12px;border-radius:6px;font-size:13px;font-weight:700;color:var(--dim);transition:.2s}
+  .lang-switch button.on{background:var(--blue);color:#fff}
+  .lang-switch button:hover:not(.on){color:var(--blue)}
+
+  .burger{display:none;background:none;border:none;font-size:26px;color:var(--deep);cursor:pointer}
+  @media(max-width:1040px){
+    nav{position:fixed;inset:0 0 0 auto;width:min(78vw,340px);background:#fff;flex-direction:column;align-items:stretch;gap:4px;padding:90px 30px 30px;box-shadow:-10px 0 40px rgba(10,30,70,.15);transform:translateX(105%);transition:transform .35s;justify-content:flex-start;z-index:35}
+    [dir="rtl"] nav{inset:0 auto 0 0;box-shadow:10px 0 40px rgba(10,30,70,.15);transform:translateX(-105%)}
+    nav.open{transform:none!important}
+    nav a{width:100%;padding:12px 0;border-bottom:1px solid var(--line);font-size:16px}
+    nav .quote{margin-top:16px;text-align:center;width:100%}
+    nav a::after{display:none}
+    .burger{display:block;z-index:40}
+  }
+
+  .hero{position:relative;height:min(86vh,680px);min-height:520px;overflow:hidden;background:var(--navy)}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;display:flex;align-items:center;pointer-events:none}
+  .slide.on{opacity:1;z-index:2;pointer-events:auto}
+  .slide::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1px);background-size:26px 26px;opacity:.35}
+  .s1{background:linear-gradient(105deg,#0a2e6e 0%,#124ab8 55%,#00b3ff 130%)}
+  .s2{background:linear-gradient(105deg,#0d1b33 0%,#123a75 60%,#0b5fff 135%)}
+  .s3{background:linear-gradient(105deg,#062e22 0%,#0f6a52 60%,#00e0a4 135%)}
+  html[lang="ar"] .s1{background:linear-gradient(-105deg,#0a2e6e 0%,#124ab8 55%,#00b3ff 130%)}
+  html[lang="ar"] .s2{background:linear-gradient(-105deg,#0d1b33 0%,#123a75 60%,#0b5fff 135%)}
+  html[lang="ar"] .s3{background:linear-gradient(-105deg,#062e22 0%,#0f6a52 60%,#00e0a4 135%)}
+  .slide .wrap{position:relative;z-index:3;width:100%}
+  .kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:12px;letter-spacing:2px;padding:6px 16px;border-radius:30px;margin-bottom:20px;text-transform:uppercase;backdrop-filter:blur(4px)}
+  html[lang="ar"] .kicker{letter-spacing:0;font-size:13px}
+  .slide h1{color:#fff;font-size:clamp(28px,4.6vw,54px);line-height:1.15;font-weight:800;max-width:780px;letter-spacing:-.5px}
+  html[lang="ar"] .slide h1{letter-spacing:0;line-height:1.35;font-size:clamp(26px,4.2vw,48px)}
+  .slide p{color:rgba(255,255,255,.85);font-size:16.5px;max-width:620px;margin:18px 0 32px}
+  .hbtns{display:flex;gap:14px;flex-wrap:wrap}
+  .h1{background:#fff;color:var(--deep);padding:13px 30px;border-radius:8px;font-weight:700;transition:.25s;display:inline-block}
+  .h1:hover{box-shadow:0 12px 28px rgba(0,0,0,.28);transform:translateY(-2px)}
+  .h2{border:1.5px solid rgba(255,255,255,.7);color:#fff;padding:13px 30px;border-radius:8px;font-weight:600;transition:.25s;display:inline-block}
+  .h2:hover{background:rgba(255,255,255,.14)}
+  .glow-art{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:460px;height:460px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(160,255,200,.55),rgba(0,180,255,.16) 55%,transparent 72%);filter:blur(6px);pointer-events:none;animation:float 8s ease-in-out infinite}
+  [dir="rtl"] .glow-art{right:auto;left:-80px}
+  @keyframes float{50%{transform:translateY(-56%) scale(1.05)}}
+  .dots{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
+  .dots i{width:36px;height:4px;border-radius:2px;background:rgba(255,255,255,.35);cursor:pointer;transition:.25s}
+  .dots i.on{background:#fff;width:52px}
+  .scroll-hint{position:absolute;bottom:24px;right:4vw;z-index:5;color:rgba(255,255,255,.6);font-size:12px;letter-spacing:2px;writing-mode:vertical-rl}
+  [dir="rtl"] .scroll-hint{right:auto;left:4vw}
+  @media(max-width:640px){.glow-art{width:280px;height:280px;right:-120px}[dir="rtl"] .glow-art{left:-120px;right:auto}.scroll-hint{display:none}}
+
+  .trust{background:var(--sky);border-bottom:1px solid var(--line)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;padding:26px 4vw}
+  .ti{display:flex;gap:14px;align-items:center}
+  .ti .ic{width:46px;height:46px;flex:0 0 46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 3px 10px rgba(10,40,90,.08)}
+  .ti b{display:block;font-size:15px;color:var(--deep)}
+  .ti span{font-size:12.5px;color:var(--dim)}
+
+  section{padding:84px 0}
+  .st{text-align:center;margin-bottom:52px}
+  .st .lb{color:var(--blue);font-weight:700;letter-spacing:3px;font-size:12.5px;text-transform:uppercase}
+  html[lang="ar"] .st .lb{letter-spacing:0}
+  .st h2{font-size:clamp(26px,3.6vw,38px);color:var(--navy);margin:8px 0 14px;letter-spacing:-.5px}
+  html[lang="ar"] .st h2{letter-spacing:0}
+  .st p{color:var(--dim);max-width:680px;margin:0 auto}
+  .rule{width:56px;height:4px;background:linear-gradient(90deg,var(--blue),var(--glow));border-radius:2px;margin:16px auto 0}
+  html[lang="ar"] .rule{background:linear-gradient(-90deg,var(--blue),var(--glow))}
+
+  .apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+  .app{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;cursor:pointer;transition:.3s;position:relative;overflow:hidden}
+  .app::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,95,255,.06),rgba(0,224,164,.06));opacity:0;transition:.3s}
+  .app:hover{transform:translateY(-5px);box-shadow:0 16px 36px -16px rgba(11,60,160,.3);border-color:#c8d8f5}
+  .app:hover::before{opacity:1}
+  .app .ai{font-size:30px;margin-bottom:12px;display:block;position:relative}
+  .app h4{color:var(--navy);font-size:15.5px;margin-bottom:6px;position:relative}
+  .app p{font-size:13px;color:var(--dim);position:relative}
+  .app.sel{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,95,255,.12)}
+
+  .filterbar{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+  .filterbar button{background:#fff;border:1px solid var(--line);color:var(--dim);padding:8px 18px;border-radius:30px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.25s}
+  .filterbar button:hover{border-color:var(--blue);color:var(--blue)}
+  .filterbar button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+  .pcard{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:.35s;display:flex;flex-direction:column}
+  .pcard:hover{transform:translateY(-6px);box-shadow:0 22px 46px -18px rgba(11,60,160,.3);border-color:#c8d8f5}
+  .pcard.hide{display:none}
+  .pimg{height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .pimg::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.2) 1px,transparent 1px);background-size:18px 18px;opacity:.5}
+  .pimg .ph{font-size:52px;filter:drop-shadow(0 6px 16px rgba(0,0,0,.35));position:relative;z-index:2}
+  .pimg small{position:absolute;inset-inline-start:14px;top:12px;background:rgba(255,255,255,.92);color:var(--deep);font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:5px;z-index:2}
+  html[lang="ar"] .pimg small{letter-spacing:0}
+  .g1{background:linear-gradient(135deg,#0a2e6e,#00b3ff)}
+  .g2{background:linear-gradient(135deg,#0d1b33,#00c48f)}
+  .g3{background:linear-gradient(135deg,#33210a,#ffb347)}
+  .g4{background:linear-gradient(135deg,#2a0a3d,#b44dff)}
+  .pbody{padding:22px;flex:1;display:flex;flex-direction:column}
+  .pbody h3{color:var(--navy);font-size:18px;margin-bottom:10px}
+  .pbody p{font-size:14px;color:var(--dim);flex:1}
+  .spec{margin:14px 0 18px;border-top:1px dashed var(--line);padding-top:12px;font-size:13px}
+  .spec div{display:flex;justify-content:space-between;padding:4px 0;color:var(--txt);gap:12px}
+  .spec div span:last-child{color:var(--deep);font-weight:600;text-align:end}
+  .pactions{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .plink{color:var(--blue);font-weight:700;font-size:14px;cursor:pointer;background:none;border:none;padding:0;transition:.2s}
+  .plink:hover{color:var(--deep);text-decoration:underline}
+  .pquick{color:var(--dim);font-size:13px;font-weight:600;cursor:pointer;background:none;border:none;transition:.2s}
+  .pquick:hover{color:var(--blue)}
+
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 8px 28px -18px rgba(10,40,90,.2)}
+  table{width:100%;border-collapse:collapse;min-width:760px;background:#fff;font-size:14.5px}
+  th{background:var(--deep);color:#fff;text-align:start;padding:15px 18px;font-weight:600;font-size:13.5px;letter-spacing:.3px}
+  td{padding:13px 18px;border-bottom:1px solid var(--line)}
+  tr:last-child td{border-bottom:none}
+  tr:nth-child(even) td{background:#f7faff}
+  td:first-child{font-weight:700;color:var(--navy)}
+  .rec{display:inline-block;background:#e6f7ef;color:#0a8a4f;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:20px}
+
+  .proc{background:var(--sky)}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+  .step{background:#fff;border-radius:var(--radius);padding:26px 20px;text-align:center;border:1px solid var(--line);transition:.3s}
+  .step:hover{transform:translateY(-4px);box-shadow:0 14px 30px -16px rgba(11,60,160,.25)}
+  .step .no{width:42px;height:42px;margin:0 auto 14px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--accent));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:17px}
+  .step h4{color:var(--navy);font-size:15.5px;margin-bottom:8px}
+  .step p{font-size:13px;color:var(--dim)}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  @media(max-width:900px){.about{grid-template-columns:1fr;gap:36px}}
+  .about .pic{border-radius:var(--radius);overflow:hidden;background:radial-gradient(circle at 50% 40%,#123a75,#0a1a35);min-height:380px;display:flex;align-items:center;justify-content:center;position:relative}
+  .about .pic::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.1) 1px,transparent 1px);background-size:22px 22px}
+  .about .pic img{width:60%;max-width:260px;border-radius:12px;position:relative;z-index:2;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+  .about h2{color:var(--navy);font-size:clamp(24px,3vw,34px);margin:8px 0 18px;letter-spacing:-.5px}
+  html[lang="ar"] .about h2{letter-spacing:0}
+  .about .lb{color:var(--blue);font-weight:700;letter-spacing:3px;font-size:12.5px;text-transform:uppercase}
+  html[lang="ar"] .about .lb{letter-spacing:0}
+  .about p{color:var(--dim);margin-bottom:14px;font-size:15px}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+  .nums div{background:var(--sky);border-radius:12px;padding:16px 10px;text-align:center}
+  .nums b{display:block;font-size:26px;color:var(--blue);letter-spacing:-.5px}
+  .nums span{font-size:11.5px;color:var(--dim);letter-spacing:.5px}
+  html[lang="ar"] .nums span{letter-spacing:0}
+
+  .faq{max-width:840px;margin:0 auto}
+  details{border:1px solid var(--line);border-radius:12px;margin-bottom:14px;background:#fff;overflow:hidden;transition:.25s}
+  details[open]{box-shadow:0 10px 28px -18px rgba(10,40,90,.25);border-color:#c8d8f5}
+  summary{cursor:pointer;padding:18px 22px;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:15.5px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--blue);font-size:22px;font-weight:400;transition:.3s;flex:0 0 auto}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 22px 18px;color:var(--dim);font-size:14.5px}
+
+  .band{background:linear-gradient(100deg,var(--deep),var(--blue));padding:0;position:relative;overflow:hidden}
+  html[lang="ar"] .band{background:linear-gradient(-100deg,var(--deep),var(--blue))}
+  .band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:24px 24px}
+  .band .wrap{position:relative;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;padding:56px 4vw}
+  .band h2{color:#fff;font-size:clamp(22px,3vw,32px);letter-spacing:-.5px}
+  html[lang="ar"] .band h2{letter-spacing:0}
+  .band p{color:rgba(255,255,255,.82);margin-top:8px}
+  .band a{background:#fff;color:var(--deep);padding:14px 34px;border-radius:8px;font-weight:800;transition:.25s;display:inline-block}
+  .band a:hover{box-shadow:0 12px 30px rgba(0,0,0,.32);transform:translateY(-2px)}
+
+  .cgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}
+  @media(max-width:900px){.cgrid{grid-template-columns:1fr;gap:36px}}
+  .citem{display:flex;gap:16px;margin-bottom:26px}
+  .citem .ic{width:48px;height:48px;flex:0 0 48px;border-radius:12px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:21px}
+  .citem h5{color:var(--dim);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px}
+  html[lang="ar"] .citem h5{letter-spacing:0}
+  .citem a,.citem b{color:var(--navy);font-size:16px;font-weight:700;transition:.2s;word-break:break-word}
+  .citem a:hover{color:var(--blue)}
+  form{background:#f7faff;border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:600px){.frow{grid-template-columns:1fr}form{padding:24px}}
+  form input,form select,form textarea{width:100%;padding:13px 15px;border:1px solid #d4deee;border-radius:8px;font-size:15px;font-family:inherit;background:#fff;color:var(--txt);outline:none;margin-bottom:16px;transition:.2s}
+  form input:focus,form textarea:focus,form select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,95,255,.12)}
+  form textarea{min-height:110px;resize:vertical}
+  form button{width:100%;background:var(--blue);color:#fff;border:none;padding:15px;border-radius:8px;font-size:16px;font-weight:800;cursor:pointer;transition:.25s;letter-spacing:.5px}
+  html[lang="ar"] form button{letter-spacing:0}
+  form button:hover{background:var(--deep);box-shadow:0 10px 24px rgba(11,95,255,.3)}
+  form button:disabled{opacity:.6;cursor:wait}
+  .formnote{font-size:12.5px;color:var(--dim);text-align:center;margin-top:12px}
+  .formmsg{display:none;padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:16px}
+  .formmsg.ok{display:block;background:#e6f7ef;color:#0a8a4f;border:1px solid #b8e6ce}
+  .formmsg.err{display:block;background:#fdecec;color:#c0392b;border:1px solid #f5c6c6}
+
+  footer{background:var(--navy);color:#9fb0c8;padding:60px 0 0}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;padding-bottom:44px}
+  @media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.fgrid{grid-template-columns:1fr}}
+  footer img{height:52px;border-radius:8px;margin-bottom:14px;background:#fff;padding:5px}
+  footer h6{color:#fff;font-size:15px;letter-spacing:1px;margin-bottom:16px}
+  html[lang="ar"] footer h6{letter-spacing:0}
+  footer p{font-size:13.5px;line-height:1.7}
+  footer a{display:block;color:#9fb0c8;font-size:13.5px;margin-bottom:10px;transition:.2s}
+  footer a:hover{color:var(--accent)}
+  .fbot{border-top:1px solid rgba(255,255,255,.1);text-align:center;padding:20px 4vw;font-size:12.5px;color:#6d7f99;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .fbot a{display:inline;color:#6d7f99;margin:0}
+  .fbot a:hover{color:var(--accent)}
+
+  .wa{position:fixed;right:24px;bottom:24px;z-index:60;background:#25d366;color:#fff;border-radius:50px;padding:13px 22px 13px 16px;font-weight:700;font-size:15px;display:flex;gap:9px;align-items:center;box-shadow:0 10px 26px rgba(37,211,102,.45);transition:.25s}
+  [dir="rtl"] .wa{right:auto;left:24px}
+  .wa:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(37,211,102,.55)}
+  .wa svg{width:22px;height:22px;fill:#fff}
+  @media(max-width:640px){.wa span{display:none}.wa{padding:14px;right:18px;bottom:18px}[dir="rtl"] .wa{left:18px;right:auto}}
+
+  .overlay{position:fixed;inset:0;background:rgba(10,20,40,.55);backdrop-filter:blur(3px);z-index:90;opacity:0;pointer-events:none;transition:.3s}
+  .overlay.on{opacity:1;pointer-events:auto}
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:min(560px,94vw);background:#fff;z-index:100;transform:translateX(105%);transition:transform .4s cubic-bezier(.22,.8,.3,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(10,20,40,.25)}
+  [dir="rtl"] .drawer{right:auto;left:0;transform:translateX(-105%);box-shadow:20px 0 60px rgba(10,20,40,.25)}
+  .drawer.on{transform:none!important}
+  .dhead{padding:26px 30px;background:linear-gradient(135deg,var(--deep),var(--blue));color:#fff;position:relative}
+  .dhead .dtag{font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;opacity:.8}
+  html[lang="ar"] .dhead .dtag{letter-spacing:0}
+  .dhead h3{font-size:24px;margin-top:6px;letter-spacing:-.4px}
+  html[lang="ar"] .dhead h3{letter-spacing:0}
+  .dclose{position:absolute;top:20px;right:22px;background:rgba(255,255,255,.16);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center}
+  [dir="rtl"] .dclose{right:auto;left:22px}
+  .dclose:hover{background:rgba(255,255,255,.3);transform:rotate(90deg)}
+  .dbody{padding:30px;overflow-y:auto;flex:1}
+  .dbody h4{color:var(--navy);font-size:14px;letter-spacing:1.2px;text-transform:uppercase;margin:24px 0 12px}
+  html[lang="ar"] .dbody h4{letter-spacing:0}
+  .dbody h4:first-child{margin-top:0}
+  .dbody p{color:var(--dim);font-size:14.5px;margin-bottom:10px}
+  .dspec{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .dspec div{display:flex;justify-content:space-between;padding:11px 16px;font-size:14px;border-bottom:1px solid var(--line);gap:16px}
+  .dspec div:last-child{border-bottom:none}
+  .dspec div:nth-child(even){background:#f7faff}
+  .dspec span:last-child{color:var(--deep);font-weight:700;text-align:end}
+  .dapps{display:flex;flex-wrap:wrap;gap:8px}
+  .dapps span{background:var(--sky);color:var(--deep);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:20px}
+  .dfoot{padding:20px 30px;border-top:1px solid var(--line);display:flex;gap:12px;background:#fafcff}
+  .dfoot a{flex:1;text-align:center;padding:13px;border-radius:8px;font-weight:700;font-size:14.5px;transition:.25s}
+  .dfoot .p{background:var(--blue);color:#fff}
+  .dfoot .p:hover{background:var(--deep)}
+  .dfoot .s{border:1.5px solid var(--line);color:var(--navy)}
+  .dfoot .s:hover{border-color:var(--blue);color:var(--blue)}
+
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+  .rv.on{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="util">
+  <div class="wrap">
+    <span id="utilTag"></span>
+    <span>
+      <a href="mailto:huizheng326@gmail.com" id="utilMail"></a>
+      <a href="tel:+8618754300933" id="utilTel"></a>
+    </span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="logo.jpg" alt="YUHUI logo">
+      <span class="bt">
+        <span class="b1">YUHUI</span>
+        <span class="b2" id="brandSub">Shandong Yuhui New Materials Co., Ltd.</span>
+      </span>
+    </a>
+    <nav id="nav">
+      <a href="#top" class="on" data-i18n="nav.home"></a>
+      <a href="#products" data-i18n="nav.products"></a>
+      <a href="#applications" data-i18n="nav.apps"></a>
+      <a href="#specs" data-i18n="nav.specs"></a>
+      <a href="#about" data-i18n="nav.about"></a>
+      <a href="#faq" data-i18n="nav.faq"></a>
+      <a class="quote" href="#contact" data-i18n="nav.quote"></a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" id="langSwitch">
+        <button data-lang="en" class="on">EN</button>
+        <button data-lang="ar">ع</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div id="heroSlides"></div>
+  <div class="dots" id="heroDots"></div>
+  <div class="scroll-hint" id="scrollHint">SCROLL</div>
+</div>
+
+<div class="trust">
+  <div class="wrap" id="trustStrip"></div>
+</div>
+
+<section id="applications">
+  <div class="wrap">
+    <div class="st rv">
+      <div class="lb" data-i18n="sec.appsLb"></div>
+      <h2 data-i18n="sec.appsH"></h2>
+      <p data-i18n="sec.appsP"></p>
+      <div class="rule"></div>
+    </div>
+    <div class="apps rv" id="appsGrid"></div>
+  </div>
+</section>
+
+<section id="products" style="background:#f7faff">
+  <div class="wrap">
+    <div class="st rv">
+      <div class="lb" data-i18n="sec.prodLb"></div>
+      <h2 data-i18n="sec.prodH"></h2>
+      <p data-i18n="sec.prodP"></p>
+      <div class="rule"></div>
+    </div>
+    <div class="filterbar rv" id="filterBar"></div>
+    <div class="pgrid" id="productsGrid"></div>
+  </div>
+</section>
+
+<section id="specs">
+  <div class="wrap">
+    <div class="st rv">
+      <div class="lb" data-i18n="sec.specLb"></div>
+      <h2 data-i18n="sec.specH"></h2>
+      <p data-i18n="sec.specP"></p>
+      <div class="rule"></div>
+    </div>
+    <div class="tablewrap rv">
+      <table>
+        <thead><tr id="specHead"></tr></thead>
+        <tbody id="specBody"></tbody>
+      </table>
+    </div>
+    <p style="text-align:center;color:var(--dim);font-size:13px;margin-top:16px" data-i18n="sec.specNote"></p>
+  </div>
+</section>
+
+<section id="process" class="proc">
+  <div class="wrap">
+    <div class="st rv">
+      <div class="lb" data-i18n="sec.procLb"></div>
+      <h2 data-i18n="sec.procH"></h2>
+      <p data-i18n="sec.procP"></p>
+      <div class="rule"></div>
+    </div>
+    <div class="steps" id="stepsGrid"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="pic rv"><img src="logo.jpg" alt="YUHUI"></div>
+      <div class="rv">
+        <div class="lb" data-i18n="sec.aboutLb"></div>
+        <h2 id="aboutCompany">Shandong Yuhui New Materials Co., Ltd.</h2>
+        <p id="aboutP1"></p>
+        <p id="aboutP2"></p>
+        <div class="nums" id="numsGrid"></div>
+        <a class="quote" href="#contact" data-i18n="sec.aboutBtn" style="display:inline-block"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:#f7faff">
+  <div class="wrap">
+    <div class="st rv">
+      <div class="lb" data-i18n="sec.faqLb"></div>
+      <h2 data-i18n="sec.faqH"></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq rv" id="faqList"></div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div>
+      <h2 data-i18n="cta.h"></h2>
+      <p data-i18n="cta.p"></p>
+    </div>
+    <a href="#contact" data-i18n="cta.btn"></a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="st rv">
+      <div class="lb" data-i18n="sec.conLb"></div>
+      <h2 data-i18n="sec.conH"></h2>
+      <p data-i18n="sec.conP"></p>
+      <div class="rule"></div>
+    </div>
+    <div class="cgrid">
+      <div class="rv">
+        <div class="citem"><div class="ic">📞</div><div><h5 data-i18n="contact.phone"></h5><a id="cPhone" href="#" target="_blank" rel="noopener"></a></div></div>
+        <div class="citem"><div class="ic">✉️</div><div><h5 data-i18n="contact.email"></h5><a id="cMail" href="#"></a></div></div>
+        <div class="citem"><div class="ic">💼</div><div><h5 data-i18n="contact.linkedin"></h5><a id="cLinked" href="#" target="_blank" rel="noopener"></a></div></div>
+        <div class="citem"><div class="ic">📍</div><div><h5 data-i18n="contact.addr"></h5><b id="cAddr"></b></div></div>
+        <div class="citem"><div class="ic">🕘</div><div><h5 data-i18n="contact.hours"></h5><b data-i18n="contact.hoursVal"></b></div></div>
+      </div>
+      <form class="rv" id="inquiryForm" novalidate>
+        <div class="formmsg" id="formMsg"></div>
+        <div class="frow">
+          <input type="text" name="name" id="fName" required>
+          <input type="email" name="email" id="fEmail" required>
+        </div>
+        <div class="frow">
+          <input type="text" name="company" id="fCompany">
+          <input type="text" name="country" id="fCountry" required>
+        </div>
+        <select name="interest" id="interestSelect"></select>
+        <textarea name="message" id="fMsg" required></textarea>
+        <button type="submit" id="submitBtn"></button>
+        <p class="formnote" data-i18n="form.note"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img src="logo.jpg" alt="YUHUI">
+        <p id="footAbout"></p>
+      </div>
+      <div>
+        <h6 data-i18n="footer.prod"></h6>
+        <a href="#products" data-i18n="footer.p1"></a>
+        <a href="#products" data-i18n="footer.p2"></a>
+        <a href="#products" data-i18n="footer.p3"></a>
+        <a href="#specs" data-i18n="footer.p4"></a>
+      </div>
+      <div>
+        <h6 data-i18n="footer.comp"></h6>
+        <a href="#about" data-i18n="footer.c1"></a>
+        <a href="#process" data-i18n="footer.c2"></a>
+        <a href="#applications" data-i18n="footer.c3"></a>
+        <a href="#faq" data-i18n="footer.c4"></a>
+      </div>
+      <div>
+        <h6 data-i18n="footer.cont"></h6>
+        <a id="fWa" href="#" target="_blank" rel="noopener"></a>
+        <a id="fTel" href="#"></a>
+        <a id="fMail" href="#"></a>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© <span id="yr"></span> <span id="footCopy"></span></span>
+    <span><a href="/admin" data-i18n="footer.admin"></a> · <a href="#top" data-i18n="footer.top"></a></span>
+  </div>
+</footer>
+
+<a class="wa" id="waBtn" href="#" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3s1 2.7 1.2 2.9c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 4.9L2 22l5.3-1.4c1.4.7 3 1.1 4.7 1.1 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.8-1.3-1.2-2.9-1.2-4.4 0-4.6 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.7 8.3-8.3 8.3z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="dhead">
+    <div class="dtag" id="dTag"></div>
+    <h3 id="dName"></h3>
+    <button class="dclose" id="dClose" aria-label="Close">×</button>
+  </div>
+  <div class="dbody">
+    <h4 data-i18n="drawer.overview"></h4>
+    <p id="dDesc"></p>
+    <h4 data-i18n="drawer.specs"></h4>
+    <div class="dspec" id="dSpec"></div>
+    <h4 data-i18n="drawer.apps"></h4>
+    <div class="dapps" id="dApps"></div>
+    <h4 data-i18n="drawer.notes"></h4>
+    <p id="dNotes"></p>
+  </div>
+  <div class="dfoot">
+    <a class="p" href="#contact" id="dQuote" data-i18n="drawer.quote"></a>
+    <a class="s" id="dWa" href="#" target="_blank" rel="noopener" data-i18n="drawer.wa"></a>
+  </div>
+</aside>
+
+<script>
+const UI = {
+  en: {
+    nav: { home:"Home", products:"Products", apps:"Applications", specs:"Specs", about:"About", faq:"FAQ", quote:"Request a Quote" },
+    hero: { samples:"Get Free Samples", wa:"WhatsApp Us" },
+    trust: [
+      { ic:"🏭", b:"Factory Direct", s:"No trading-company markup" },
+      { ic:"🧪", b:"Batch Testing", s:"Luminance meter QC every lot" },
+      { ic:"🚢", b:"Export Ready", s:"FOB / CIF / DDP supported" },
+      { ic:"⚡", b:"24h Response", s:"Quotes & TDS within one day" }
+    ],
+    sec: {
+      appsLb:"Where It Works", appsH:"Find the Right Grade for Your Application",
+      appsP:"From safety signage to decorative stones — select your industry and we'll show the matching products.",
+      prodLb:"Product Line", prodH:"Photoluminescent Products",
+      prodP:"Four core series covering industrial, decorative and safety applications. Free samples available for quality evaluation.",
+      specLb:"Buyer's Guide", specH:"Glow Powder Grades at a Glance",
+      specP:"A quick matrix to help procurement teams shortlist the right grade before we send formal TDS documents.",
+      specNote:"* Grade names and parameters shown as reference — full test reports available on request.",
+      procLb:"Quality System", procH:"From Raw Material to Your Warehouse",
+      procP:"Six controlled stages, with luminance inspection as a mandatory gate before any shipment.",
+      aboutLb:"About YUHUI",
+      aboutP1:"Based in Shandong Province — a core hub of China's photoluminescent industry — we specialize in the R&D, manufacturing and export of glow-in-the-dark materials.",
+      aboutP2:"Our product family covers glow powders, luminous stones and photoluminescent coatings, serving customers in safety signage, decoration, textiles, arts & crafts, and industrial manufacturing across the globe.",
+      aboutBtn:"Schedule a Factory Audit / Call",
+      faqLb:"Before You Order", faqH:"Frequently Asked Questions",
+      conLb:"Contact", conH:"Send Your Inquiry",
+      conP:"Prefer faster answers? Message us directly on WhatsApp — we reply during China business hours in real time.",
+      specHead:["Grade","Glow Color","Particle","Afterglow","Typical Application",""]
+    },
+    filterAll:"All Products",
+    steps: [
+      { h:"Raw Material", p:"High-purity strontium carbonate & rare-earth oxides, incoming inspection." },
+      { h:"High-temp Calcination", p:"Doping & calcination in controlled-atmosphere kilns." },
+      { h:"Milling & Sieving", p:"Air-jet milling to target mesh; optional waterproof coating." },
+      { h:"Luminance QC", p:"Every batch measured: initial brightness & decay curve." },
+      { h:"Packaging", p:"Moisture-proof foil bags, 25 kg drums or OEM packaging." },
+      { h:"Export", p:"FOB / CIF / DDP, complete shipping & compliance docs." }
+    ],
+    nums: [
+      { b:"50+", s:"EXPORT COUNTRIES" },
+      { b:"12h", s:"MAX AFTERGLOW" },
+      { b:"24h", s:"QUOTE RESPONSE" }
+    ],
+    viewDetails:"View Details →",
+    quickQuote:"Quick Quote",
+    drawer: {
+      overview:"Overview", specs:"Specifications", apps:"Recommended Applications",
+      notes:"Ordering Notes", quote:"Request a Quote", wa:"WhatsApp"
+    },
+    cta: { h:"Need a spec sheet, price list or free sample?", p:"Tell us your application — we'll recommend the right grade within 24 hours.", btn:"Get in Touch →" },
+    contact: {
+      phone:"Phone / WhatsApp", email:"Email", linkedin:"LinkedIn",
+      addr:"Factory & Office", hours:"Business Hours",
+      hoursVal:"Mon – Sat, 8:30 – 18:00 (GMT+8)", linkedText:"Follow us on LinkedIn →"
+    },
+    form: {
+      name:"Full name *", email:"Business email *", company:"Company", country:"Country *",
+      msg:"Your application, quantity and target specs...",
+      submit:"SEND INQUIRY",
+      note:"We reply within 24 hours on business days. Your details are never shared.",
+      ok:"Thank you! Your inquiry has been received — we'll reply within 24 hours.",
+      err:"Please fill in all required fields.",
+      sending:"SENDING…",
+      fallback:"Opening your email client… You can also reach us directly on WhatsApp."
+    },
+    footer: {
+      prod:"Products", comp:"Company", cont:"Contact",
+      p1:"Glow Powder", p2:"Luminous Stones", p3:"Glow Paint", p4:"Grade Comparison",
+      c1:"About Us", c2:"Quality System", c3:"Applications", c4:"FAQ",
+      rights:"All Rights Reserved.", admin:"Admin", top:"Back to top ↑",
+      about:"manufacturer & exporter of photoluminescent pigments, luminous stones and glow coatings."
+    },
+    scroll:"SCROLL"
+  },
+  ar: {
+    nav: { home:"الرئيسية", products:"المنتجات", apps:"التطبيقات", specs:"المواصفات", about:"من نحن", faq:"الأسئلة", quote:"طلب عرض سعر" },
+    hero: { samples:"احصل على عينات مجانية", wa:"تواصل واتساب" },
+    trust: [
+      { ic:"🏭", b:"مباشرة من المصنع", s:"بدون وسطاء أو هوامش إضافية" },
+      { ic:"🧪", b:"اختبار لكل دفعة", s:"قياس الإضاءة على كل دفعة إنتاج" },
+      { ic:"🚢", b:"جاهز للتصدير", s:"FOB / CIF / DDP مدعومة" },
+      { ic:"⚡", b:"رد خلال 24 ساعة", s:"عروض الأسعار و TDS في يوم واحد" }
+    ],
+    sec: {
+      appsLb:"أين يُستخدم", appsH:"اعثر على الدرجة المناسبة لتطبيقك",
+      appsP:"من لافتات السلامة إلى الأحجار الزخرفية — اختر مجالك وسنعرض لك المنتجات المطابقة.",
+      prodLb:"خط الإنتاج", prodH:"منتجات فسفورية متوهجة",
+      prodP:"أربع سلاسل أساسية تغطي التطبيقات الصناعية والزخرفية والسلامة. عينات مجانية متاحة لتقييم الجودة.",
+      specLb:"دليل المشتري", specH:"درجات المسحوق المتوهج في لمحة",
+      specP:"مصفوفة سريعة لمساعدة فرق المشتريات على تحديد الدرجة المناسبة قبل إرسال وثائق TDS الرسمية.",
+      specNote:"* أسماء الدرجات والمعلمات معروضة كمرجع — تقارير الاختبار الكاملة متاحة عند الطلب.",
+      procLb:"نظام الجودة", procH:"من المادة الخام إلى مستودعك",
+      procP:"ست مراحل مُحكمة، مع فحص الإضاءة كبوابة إلزامية قبل أي شحنة.",
+      aboutLb:"عن يوهوي",
+      aboutP1:"مقرنا في مقاطعة شاندونغ — مركز أساسي لصناعة المواد الفسفورية في الصين — ونحن متخصصون في البحث والتطوير والتصنيع والتصدير للمواد المتوهجة في الظلام.",
+      aboutP2:"تشمل عائلتنا المنتجة المساحيق المتوهجة والأحجار المضيئة والطلاءات الفسفورية، ونخدم عملاء في لافتات السلامة والديكور والمنسوجات والفنون والحرف والتصنيع الصناعي حول العالم.",
+      aboutBtn:"اطلب زيارة مصنع أو مكالمة",
+      faqLb:"قبل أن تطلب", faqH:"الأسئلة الشائعة",
+      conLb:"اتصل بنا", conH:"أرسل استفسارك",
+      conP:"تفضل الردود السريعة؟ راسلنا مباشرة على واتساب — نرد خلال ساعات العمل الصينية في الوقت الفعلي.",
+      specHead:["الدرجة","لون التوهج","الحبيبات","التوهج المتبقي","التطبيق النموذجي",""]
+    },
+    filterAll:"كل المنتجات",
+    steps: [
+      { h:"المادة الخام", p:"كربونات السترونشيوم عالية النقاء وأكاسيد العناصر النادرة، مع فحص عند الاستلام." },
+      { h:"التكليس بدرجة حرارة عالية", p:"التشويب والتكليس في أفران بجو مُتحكَّم فيه." },
+      { h:"الطحن والغربلة", p:"طحن بنفاث الهواء للوصول إلى الشبكة المطلوبة؛ طلاء مقاوم للماء اختياري." },
+      { h:"فحص الإضاءة", p:"قياس كل دفعة: السطوع الأولي ومنحنى الاضمحلال." },
+      { h:"التغليف", p:"أكياس رقائق مقاومة للرطوبة، براميل 25 كجم أو تغليف OEM." },
+      { h:"التصدير", p:"FOB / CIF / DDP، وثائق شحن ومطابقة كاملة." }
+    ],
+    nums: [
+      { b:"+50", s:"دولة تصدير" },
+      { b:"12 س", s:"أقصى توهج متبقٍ" },
+      { b:"24 س", s:"زمن الرد على العرض" }
+    ],
+    viewDetails:"عرض التفاصيل ←",
+    quickQuote:"عرض سعر سريع",
+    drawer: {
+      overview:"نظرة عامة", specs:"المواصفات", apps:"التطبيقات الموصى بها",
+      notes:"ملاحظات الطلب", quote:"طلب عرض سعر", wa:"واتساب"
+    },
+    cta: { h:"تحتاج ورقة مواصفات أو قائمة أسعار أو عينة مجانية؟", p:"أخبرنا بتطبيقك — سنوصي بالدرجة المناسبة خلال 24 ساعة.", btn:"تواصل معنا ←" },
+    contact: {
+      phone:"الهاتف / واتساب", email:"البريد الإلكتروني", linkedin:"لينكدإن",
+      addr:"المصنع والمكتب", hours:"ساعات العمل",
+      hoursVal:"الإثنين – السبت، 8:30 – 18:00 (GMT+8)", linkedText:"تابعنا على لينكدإن ←"
+    },
+    form: {
+      name:"الاسم الكامل *", email:"البريد الإلكتروني للعمل *", company:"الشركة", country:"الدولة *",
+      msg:"التطبيق والكمية والمواصفات المطلوبة...",
+      submit:"إرسال الاستفسار",
+      note:"نرد خلال 24 ساعة في أيام العمل. لن تتم مشاركة بياناتك مع أي طرف آخر.",
+      ok:"شكرًا لك! تم استلام استفسارك — سنرد خلال 24 ساعة.",
+      err:"يرجى ملء جميع الحقول المطلوبة.",
+      sending:"جارٍ الإرسال…",
+      fallback:"يتم فتح برنامج البريد لديك… يمكنك أيضًا التواصل معنا مباشرة على واتساب."
+    },
+    footer: {
+      prod:"المنتجات", comp:"الشركة", cont:"اتصل بنا",
+      p1:"مسحوق متوهج", p2:"أحجار مضيئة", p3:"طلاء متوهج", p4:"مقارنة الدرجات",
+      c1:"من نحن", c2:"نظام الجودة", c3:"التطبيقات", c4:"الأسئلة الشائعة",
+      rights:"جميع الحقوق محفوظة.", admin:"الإدارة", top:"إلى الأعلى ↑",
+      about:"مُصنّع ومُصدّر للصبغات الفسفورية والأحجار المضيئة والطلاءات المتوهجة."
+    },
+    scroll:"اسحب للأسفل"
+  }
+};
+
+const DEFAULT_EN = {
+  site:{ company:"Shandong Yuhui New Materials Co., Ltd.", phone:"+86 187 5430 0933", phoneRaw:"8618754300933",
+    email:"huizheng326@gmail.com", linkedin:"https://www.linkedin.com/", address:"Shandong Province, China",
+    utilTag:"Photoluminescent Materials Manufacturer · Shandong, China" },
+  hero:[
+    { kicker:"Factory Direct · Since Shandong", title:"Glow in the Dark Powder & Luminous Products — Direct from Our Factory", text:"Strontium aluminate photoluminescent pigment with 8–12 hours afterglow. Batch luminance testing, MSDS documentation, global shipping experience.", bg:"s1", glow:"rgba(160,255,200,.55)" },
+    { kicker:"Full Specification Range", title:"200 – 2000 Mesh · Round / Irregular / Coated · 4 Glow Colors", text:"Whatever your application — coatings, inks, plastics, resin or signage — we have the matching grade and can customize for your market.", bg:"s2", glow:"rgba(120,200,255,.5)" },
+    { kicker:"For Distributors & Brands", title:"OEM · Private Label · Custom Packaging — Your Brand, Our Glow", text:"Helping importers and brands in 50+ countries build their own luminous product lines with reliable lead times and honest communication.", bg:"s3", glow:"rgba(160,255,190,.5)" }
+  ],
+  applications:[
+    { id:"safety",   icon:"🚪", name:"Safety & Exit Signage", desc:"Photoluminescent egress marking and signage systems." },
+    { id:"decor",    icon:"🪨", name:"Decorative Stones",     desc:"Garden, pathway, aquarium and landscape glow stones." },
+    { id:"textile",  icon:"👕", name:"Textile & Apparel",     desc:"Glow prints, embroidery and screen-printed garments." },
+    { id:"coatings", icon:"🎨", name:"Coatings & Inks",       desc:"Solvent, water-based and UV-curable glow systems." },
+    { id:"plastics", icon:"⚙️", name:"Plastics & Resin",      desc:"Masterbatch, injection and cast resin applications." },
+    { id:"crafts",   icon:"✨", name:"Arts & Crafts",         desc:"DIY kits, nail art, toys and novelty products." }
+  ],
+  products:[
+    { id:"glow-powder", name:"Glow in the Dark Powder", tag:"Best Seller", icon:"✨", grad:"g1", apps:["coatings","textile","crafts","plastics"],
+      summary:"Rare-earth strontium aluminate pigment. 10× brighter and 3× longer than old zinc sulfide type. For coatings, inks, plastics, resin, ceramics.",
+      specs:[{k:"Afterglow",v:"8–12+ hours"},{k:"Particle size",v:"200–2000 mesh"},{k:"Glow color",v:"Blue-green / Yellow-green"},{k:"Base material",v:"SrAl₂O₄:Eu,Dy"},{k:"Packaging",v:"1 kg foil bag / 25 kg drum"}],
+      notes:"Store sealed and dry. Avoid prolonged moisture exposure. Free 50–100 g samples for evaluation (freight collect)." },
+    { id:"luminous-stones", name:"Luminous Stones & Gravel", tag:"Decorative", icon:"🪨", grad:"g2", apps:["decor","crafts"],
+      summary:"Charge-and-glow stones for gardens, pathways, aquariums, vases and landscape art. Waterproof, UV-stable, reusable for years.",
+      specs:[{k:"Sizes",v:"8–10 / 20–30 / 30–50 mm"},{k:"Colors",v:"Mixed / Custom"},{k:"Charge time",v:"10–20 min sunlight"},{k:"Material",v:"Resin / Stone composite"},{k:"Packaging",v:"Bag / Carton / OEM box"}],
+      notes:"Ideal for retail-ready packaging. Custom color mixes and private-label bags available from 500 kg." },
+    { id:"glow-paint", name:"Photoluminescent Paint", tag:"Ready-to-use", icon:"🎨", grad:"g3", apps:["safety","coatings","decor"],
+      summary:"Pigment-dispersed glow coatings for safety signage, exit paths, machinery marking and feature walls. Interior & exterior grades.",
+      specs:[{k:"Carrier",v:"Acrylic / PU base"},{k:"Finish",v:"Matte / Semi-gloss"},{k:"Coverage",v:"Per TDS on request"},{k:"Application",v:"Brush / Roller / Spray"},{k:"Shelf life",v:"12 months sealed"}],
+      notes:"Surface preparation matters — clean, dry and primed substrates give the best glow performance." },
+    { id:"oem", name:"Custom Grades & OEM", tag:"Custom", icon:"⚗️", grad:"g4", apps:["plastics","coatings","textile","crafts"],
+      summary:"Tailored particle size, afterglow curve, color temperature and packaging (from 1 kg foil bags to 25 kg drums) under your brand.",
+      specs:[{k:"MOQ (OEM)",v:"From 100 kg"},{k:"Lead time",v:"7–15 days"},{k:"Labeling",v:"Your brand artwork"},{k:"Sampling",v:"Custom sample on request"},{k:"Documentation",v:"COA / MSDS / TDS"}],
+      notes:"Send us your target spec or reference sample and we'll match it. NDA available on request." }
+  ],
+  specs:[
+    { grade:"YH-327",  color:"Blue-Green",              mesh:"400 mesh",       glow:"10–12 h", use:"Coatings, inks, masterbatch",            badge:"Most Popular" },
+    { grade:"YH-329",  color:"Yellow-Green",            mesh:"600 mesh",       glow:"8–10 h",  use:"Plastics, rubber, crafts",               badge:"" },
+    { grade:"YH-805",  color:"Sky Blue",                mesh:"800 mesh",       glow:"6–8 h",   use:"Decor, textiles, films",                 badge:"" },
+    { grade:"YH-331C", color:"Blue-Green (waterproof)", mesh:"500 mesh",       glow:"10–12 h", use:"Outdoor coatings, cement, road marking", badge:"Coated" },
+    { grade:"YH-Fine", color:"Blue-Green",              mesh:"1500–2000 mesh", glow:"5–8 h",   use:"Printing inks, cosmetics-grade crafts",  badge:"" }
+  ],
+  faq:[
+    { q:"Are samples available?", a:"Yes — 50–100 g free samples of standard grades are available; you only cover express freight (DHL / FedEx / UPS). Custom grades are quoted individually." },
+    { q:"What is the difference between glow powder colors?", a:"Blue-green has the brightest and longest afterglow (10–12 h); yellow-green appears brighter to the eye at first; sky blue and other custom colors suit decorative uses with slightly shorter glow time." },
+    { q:"Is the powder safe?", a:"Our strontium aluminate pigment is non-toxic, non-radioactive and chemically stable. Compliance documentation (MSDS and test reports) is provided with every shipment. Please still avoid inhalation of fine dust and use standard PPE when handling." },
+    { q:"What are MOQ, payment terms and lead time?", a:"Standard grades: MOQ from 1 kg for trial orders, 100+ kg for stock items. Payment: T/T, Western Union, Alibaba Trade Assurance. Lead time: 3–7 days for stock, 7–15 days for OEM orders." },
+    { q:"Which Incoterms do you support?", a:"EXW, FOB Qingdao/Shanghai, CIF to most ports, and DDP to selected countries. Our logistics team arranges air, sea and express door-to-door shipping." }
+  ]
+};
+
+const DEFAULT_AR = {
+  site:{ company:"شركة شاندونغ يوهوي للمواد الجديدة المحدودة", phone:"+86 187 5430 0933", phoneRaw:"8618754300933",
+    email:"huizheng326@gmail.com", linkedin:"https://www.linkedin.com/", address:"مقاطعة شاندونغ، الصين",
+    utilTag:"مصنّع مواد فسفورية متوهجة · شاندونغ، الصين" },
+  hero:[
+    { kicker:"مباشرة من المصنع · شاندونغ", title:"مسحوق متوهج في الظلام ومنتجات مضيئة — مباشرة من مصنعنا", text:"صبغة ألومينات السترونشيوم الفسفورية بتوهج متبقي من 8 إلى 12 ساعة. اختبار إضاءة لكل دفعة، وثائق MSDS، وخبرة تصدير عالمية.", bg:"s1", glow:"rgba(160,255,200,.55)" },
+    { kicker:"نطاق مواصفات كامل", title:"من 200 إلى 2000 شبكة · مستدير / غير منتظم / مطلي · 4 ألوان توهج", text:"أيًا كان تطبيقك — طلاءات، أحبار، بلاستيك، راتنج أو لافتات — لدينا الدرجة المناسبة ويمكننا تخصيصها لسوقك.", bg:"s2", glow:"rgba(120,200,255,.5)" },
+    { kicker:"للموزعين والعلامات التجارية", title:"تصنيع بعلامتك · تغليف مخصص — علامتك، وتوهجنا", text:"نساعد المستوردين والعلامات التجارية في أكثر من 50 دولة على بناء خطوط منتجات مضيئة بمواعيد تسليم موثوقة وتواصل صادق.", bg:"s3", glow:"rgba(160,255,190,.5)" }
+  ],
+  applications:[
+    { id:"safety",   icon:"🚪", name:"لافتات السلامة والمخارج", desc:"أنظمة لافتات وعلامات مخارج فسفورية." },
+    { id:"decor",    icon:"🪨", name:"أحجار زخرفية",           desc:"أحجار متوهجة للحدائق والممرات وأحواض الأسماك." },
+    { id:"textile",  icon:"👕", name:"المنسوجات والملابس",     desc:"طباعات متوهجة وتطريز وملابس مطبوعة." },
+    { id:"coatings", icon:"🎨", name:"الطلاءات والأحبار",      desc:"أنظمة توهج بالمذيبات والماء والأشعة فوق البنفسجية." },
+    { id:"plastics", icon:"⚙️", name:"البلاستيك والراتنج",     desc:"ماسترباتش وحقن وراتنج مصبوب." },
+    { id:"crafts",   icon:"✨", name:"الفنون والحرف",          desc:"أطقم DIY وفنون الأظافر والألعاب والمنتجات المبتكرة." }
+  ],
+  products:[
+    { id:"glow-powder", name:"مسحوق متوهج في الظلام", tag:"الأكثر مبيعًا", icon:"✨", grad:"g1", apps:["coatings","textile","crafts","plastics"],
+      summary:"صبغة ألومينات السترونشيوم النادرة. أكثر سطوعًا 10 مرات وأطول 3 مرات من النوع القديم. للطلاءات والأحبار والبلاستيك والراتنج والسيراميك.",
+      specs:[{k:"التوهج المتبقي",v:"8–12+ ساعة"},{k:"حجم الجزيء",v:"200–2000 شبكة"},{k:"لون التوهج",v:"أزرق-أخضر / أصفر-أخضر"},{k:"المادة الأساسية",v:"SrAl₂O₄:Eu,Dy"},{k:"التغليف",v:"كيس 1 كجم / برميل 25 كجم"}],
+      notes:"يُخزّن مغلقًا وجافًا. تجنب التعرض المطوّل للرطوبة. عينات مجانية 50–100 غرام للتقييم (الشحن على حساب العميل)." },
+    { id:"luminous-stones", name:"أحجار وحصى مضيئة", tag:"زخرفي", icon:"🪨", grad:"g2", apps:["decor","crafts"],
+      summary:"أحجار تُشحن وتتوهج للحدائق والممرات وأحواض الأسماك والمزهريات والفنون الطبيعية. مقاومة للماء والأشعة، قابلة لإعادة الاستخدام لسنوات.",
+      specs:[{k:"الأحجام",v:"8–10 / 20–30 / 30–50 ملم"},{k:"الألوان",v:"مختلطة / مخصصة"},{k:"مدة الشحن",v:"10–20 دقيقة تحت الشمس"},{k:"المادة",v:"راتنج / مركّب حجري"},{k:"التغليف",v:"كيس / كرتون / علبة OEM"}],
+      notes:"مثالية للتغليف الجاهز للبيع. خلطات ألوان مخصصة وأكياس بعلامتك من 500 كجم." },
+    { id:"glow-paint", name:"طلاء فسفوري", tag:"جاهز للاستخدام", icon:"🎨", grad:"g3", apps:["safety","coatings","decor"],
+      summary:"طلاءات متوهجة بلون مشتت للافتات السلامة وممرات الخروج وعلامات الآلات والجدران المميزة. للاستخدام الداخلي والخارجي.",
+      specs:[{k:"الحامل",v:"أكريليك / بولي يوريثان"},{k:"التشطيب",v:"مطفي / شبه لامع"},{k:"التغطية",v:"حسب TDS عند الطلب"},{k:"التطبيق",v:"فرشاة / بكرة / رش"},{k:"مدة الصلاحية",v:"12 شهرًا مغلقًا"}],
+      notes:"تحضير السطح مهم — الأسطح النظيفة والجافة والمجهزة تعطي أفضل توهج." },
+    { id:"oem", name:"درجات مخصصة وخدمة OEM", tag:"مخصص", icon:"⚗️", grad:"g4", apps:["plastics","coatings","textile","crafts"],
+      summary:"حجم جزيء ومنحنى توهج ودرجة لون وتغليف مخصص (من أكياس 1 كجم إلى براميل 25 كجم) بعلامتك التجارية.",
+      specs:[{k:"الحد الأدنى (OEM)",v:"من 100 كجم"},{k:"مدة التسليم",v:"7–15 يومًا"},{k:"الملصقات",v:"تصميم علامتك"},{k:"العينات",v:"عينة مخصصة عند الطلب"},{k:"الوثائق",v:"COA / MSDS / TDS"}],
+      notes:"أرسل لنا المواصفات المطلوبة أو عينة مرجعية وسنطابقها. اتفاقية سرية متاحة عند الطلب." }
+  ],
+  specs:[
+    { grade:"YH-327",  color:"أزرق-أخضر",              mesh:"400 شبكة",       glow:"10–12 س", use:"طلاءات، أحبار، ماسترباتش",         badge:"الأكثر طلبًا" },
+    { grade:"YH-329",  color:"أصفر-أخضر",              mesh:"600 شبكة",       glow:"8–10 س",  use:"بلاستيك، مطاط، حرف",               badge:"" },
+    { grade:"YH-805",  color:"أزرق سماوي",             mesh:"800 شبكة",       glow:"6–8 س",   use:"ديكور، منسوجات، أفلام",            badge:"" },
+    { grade:"YH-331C", color:"أزرق-أخضر (مقاوم للماء)",mesh:"500 شبكة",       glow:"10–12 س", use:"طلاءات خارجية، أسمنت، علامات طرق", badge:"مطلي" },
+    { grade:"YH-Fine", color:"أزرق-أخضر",              mesh:"1500–2000 شبكة", glow:"5–8 س",   use:"أحبار الطباعة، حرف تجميلية",       badge:"" }
+  ],
+  faq:[
+    { q:"هل تتوفر عينات؟", a:"نعم — عينات مجانية 50–100 غرام من الدرجات القياسية متاحة؛ تتحمل أنت تكلفة الشحن السريع (DHL / FedEx / UPS). الدرجات المخصصة تُسعّر بشكل فردي." },
+    { q:"ما الفرق بين ألوان المسحوق المتوهج؟", a:"الأزرق-الأخضر الأكثر سطوعًا وأطول توهجًا (10–12 ساعة)؛ الأصفر-الأخضر يبدو أكثر سطوعًا في البداية؛ الأزرق السماوي والألوان المخصصة مناسبة للاستخدامات الزخرفية مع توهج أقصر قليلاً." },
+    { q:"هل المسحوق آمن؟", a:"صبغة ألومينات السترونشيوم غير سامة وغير مشعة ومستقرة كيميائيًا. تُرفق وثائق المطابقة (MSDS وتقارير الاختبار) مع كل شحنة. تجنب استنشاق الغبار واستخدم معدات الحماية القياسية." },
+    { q:"ما هو الحد الأدنى للطلب وشروط الدفع ومدة التسليم؟", a:"الدرجات القياسية: الحد الأدنى من 1 كجم للطلبات التجريبية، و100+ كجم للمخزون. الدفع: حوالة بنكية، ويسترن يونيون، ضمان التجارة من علي بابا. مدة التسليم: 3–7 أيام للمخزون، 7–15 يومًا لطلبات OEM." },
+    { q:"ما شروط التجارة الدولية التي تدعمونها؟", a:"EXW، FOB تشينغداو/شنغهاي، CIF لمعظم الموانئ، وDDP لدول مختارة. يرتب فريقنا الشحن جوًا وبحرًا وبابًا إلى باب." }
+  ]
+};
+
+let LANG = "en";
+let DATA = null;
+let UI_T = null;
+let activeFilter = "all";
+const $ = (s,r=document) => r.querySelector(s);
+const $$ = (s,r=document) => [...r.querySelectorAll(s)];
+
+function detectLang(){
+  const url = new URL(location.href);
+  const q = url.searchParams.get("lang");
+  if (q === "ar" || q === "en") return q;
+  const saved = localStorage.getItem("yuhui_lang");
+  if (saved === "ar" || saved === "en") return saved;
+  return "en";
+}
+
+function applyLang(){
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = LANG === "ar" ? "rtl" : "ltr";
+  $$("#langSwitch button").forEach(b => b.classList.toggle("on", b.dataset.lang === LANG));
+  UI_T = UI[LANG];
+}
+
+function t(path){
+  return path.split(".").reduce((o,k) => o && o[k], UI_T);
+}
+
+function fillI18n(){
+  $$("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+  $("#scrollHint").textContent = UI_T.scroll;
+}
+
+async function loadContent(){
+  const fallback = LANG === "ar" ? DEFAULT_AR : DEFAULT_EN;
+  try{
+    const res = await fetch("/api/content?lang=" + LANG, { headers:{ "Accept":"application/json" } });
+    if (!res.ok) throw new Error("no api");
+    const live = await res.json();
+    if (live && typeof live === "object"){
+      DATA = {
+        site:         live.site         || fallback.site,
+        hero:         live.hero         || fallback.hero,
+        applications: live.applications || fallback.applications,
+        products:     live.products     || fallback.products,
+        specs:        live.specs        || fallback.specs,
+        faq:          live.faq          || fallback.faq
+      };
+      return;
+    }
+  }catch(e){ /* fall through */ }
+  DATA = JSON.parse(JSON.stringify(fallback));
+}
+
+function renderHero(){
+  const box = $("#heroSlides"), dots = $("#heroDots");
+  box.innerHTML = DATA.hero.map((h,i)=>`
+    <div class="slide ${h.bg||"s1"} ${i===0?"on":""}">
+      <div class="glow-art" style="background:radial-gradient(circle at 40% 40%,${h.glow||"rgba(160,255,200,.5)"},transparent 70%)"></div>
+      <div class="wrap">
+        <span class="kicker">${h.kicker}</span>
+        <h1>${h.title}</h1>
+        <p>${h.text}</p>
+        <div class="hbtns">
+          <a class="h1" href="#products">${UI_T.hero.samples}</a>
+          <a class="h2" href="https://wa.me/${DATA.site.phoneRaw}" target="_blank" rel="noopener">${UI_T.hero.wa}</a>
+        </div>
+      </div>
+    </div>`).join("");
+  dots.innerHTML = DATA.hero.map((_,i)=>`<i class="${i===0?"on":""}" data-s="${i}"></i>`).join("");
+}
+
+function renderTrust(){
+  $("#trustStrip").innerHTML = UI_T.trust.map(x=>`
+    <div class="ti"><div class="ic">${x.ic}</div><div><b>${x.b}</b><span>${x.s}</span></div></div>`).join("");
+}
+
+function renderApplications(){
+  $("#appsGrid").innerHTML = DATA.applications.map(a=>`
+    <div class="app ${activeFilter===a.id?"sel":""}" data-app="${a.id}">
+      <span class="ai">${a.icon}</span>
+      <h4>${a.name}</h4>
+      <p>${a.desc}</p>
+    </div>`).join("");
+}
+
+function renderFilterBar(){
+  const base = `<button class="${activeFilter==="all"?"on":""}" data-f="all">${UI_T.filterAll}</button>`;
+  const apps = DATA.applications.map(a =>
+    `<button class="${activeFilter===a.id?"on":""}" data-f="${a.id}">${a.name}</button>`
+  ).join("");
+  $("#filterBar").innerHTML = base + apps;
+}
+
+function renderProducts(){
+  $("#productsGrid").innerHTML = DATA.products.map(p=>{
+    const shown = (p.specs||[]).slice(0,3).map(s => `<div><span>${s.k}</span><span>${s.v}</span></div>`).join("");
+    const match = activeFilter==="all" || (p.apps||[]).includes(activeFilter);
+    return `
+      <div class="pcard ${match?"":"hide"}" data-id="${p.id}">
+        <div class="pimg ${p.grad||"g1"}">
+          <span class="ph">${p.icon||"✨"}</span>
+          ${p.tag ? `<small>${p.tag}</small>` : ""}
+        </div>
+        <div class="pbody">
+          <h3>${p.name}</h3>
+          <p>${p.summary}</p>
+          <div class="spec">${shown}</div>
+          <div class="pactions">
+            <button class="plink" data-open="${p.id}">${UI_T.viewDetails}</button>
+            <button class="pquick" data-quote="${p.id}">${UI_T.quickQuote}</button>
+          </div>
+        </div>
+      </div>`;
+  }).join("");
+}
+
+function renderSpecs(){
+  $("#specHead").innerHTML = UI_T.sec.specHead.map(h => `<th>${h}</th>`).join("");
+  $("#specBody").innerHTML = DATA.specs.map(s=>`
+    <tr>
+      <td>${s.grade}</td><td>${s.color}</td><td>${s.mesh}</td><td>${s.glow}</td><td>${s.use}</td>
+      <td>${s.badge ? `<span class="rec">${s.badge}</span>` : ""}</td>
+    </tr>`).join("");
+}
+
+function renderSteps(){
+  $("#stepsGrid").innerHTML = UI_T.steps.map((s,i)=>`
+    <div class="step rv"><div class="no">${i+1}</div><h4>${s.h}</h4><p>${s.p}</p></div>`).join("");
+}
+
+function renderAbout(){
+  const s = DATA.site;
+  $("#aboutCompany").textContent = s.company;
+  $("#aboutP1").textContent = UI_T.sec.aboutP1;
+  $("#aboutP2").textContent = UI_T.sec.aboutP2;
+  $("#numsGrid").innerHTML = UI_T.nums.map(n=>`<div><b>${n.b}</b><span>${n.s}</span></div>`).join("");
+}
+
+function renderFaq(){
+  $("#faqList").innerHTML = DATA.faq.map((f,i)=>`
+    <details ${i===0?"open":""}>
+      <summary>${f.q}</summary>
+      <p>${f.a}</p>
+    </details>`).join("");
+}
+
+function renderSite(){
+  const s = DATA.site;
+  const wa = "https://wa.me/" + s.phoneRaw;
+  $("#utilTag").textContent = s.utilTag;
+  $("#utilMail").textContent = "✉ " + s.email;
+  $("#utilMail").href = "mailto:" + s.email;
+  $("#utilTel").textContent = "☎ " + s.phone;
+  $("#utilTel").href = "tel:+" + s.phoneRaw;
+  $("#brandSub").textContent = s.company;
+  $("#cPhone").textContent = s.phone;
+  $("#cPhone").href = wa;
+  $("#cMail").textContent = s.email;
+  $("#cMail").href = "mailto:" + s.email;
+  $("#cLinked").href = s.linkedin;
+  $("#cLinked").textContent = UI_T.contact.linkedText;
+  $("#cAddr").textContent = s.address;
+  $("#fWa").textContent = "WhatsApp: " + s.phone;
+  $("#fWa").href = wa;
+  $("#fTel").textContent = s.phone;
+  $("#fTel").href = "tel:+" + s.phoneRaw;
+  $("#fMail").textContent = s.email;
+  $("#fMail").href = "mailto:" + s.email;
+  $("#waBtn").href = wa;
+  $("#dWa").href = wa;
+  $("#footAbout").textContent = s.company + " — " + UI_T.footer.about;
+  $("#footCopy").textContent = s.company;
+  $("#interestSelect").innerHTML = DATA.products.map(p=>`<option>${p.name}</option>`).join("") + `<option>OEM</option>`;
+  $("#fName").placeholder = UI_T.form.name;
+  $("#fEmail").placeholder = UI_T.form.email;
+  $("#fCompany").placeholder = UI_T.form.company;
+  $("#fCountry").placeholder = UI_T.form.country;
+  $("#fMsg").placeholder = UI_T.form.msg;
+  $("#submitBtn").textContent = UI_T.form.submit;
+}
+
+function initHero(){
+  const slides = $$(".slide"), dots = $$(".dots i");
+  if (!slides.length) return;
+  let cur = 0, timer;
+  const go = (i)=>{
+    cur = (i===undefined) ? (cur+1)%slides.length : (i+slides.length)%slides.length;
+    slides.forEach((s,k)=>s.classList.toggle("on",k===cur));
+    dots.forEach((d,k)=>d.classList.toggle("on",k===cur));
+  };
+  const start = ()=>{ clearInterval(timer); timer = setInterval(()=>go(),6500); };
+  dots.forEach(d=>d.addEventListener("click",()=>{ go(+d.dataset.s); start(); }));
+  start();
+}
+
+function initDrawer(){
+  const drawer = $("#drawer"), overlay = $("#overlay");
+  const open = (id)=>{
+    const p = DATA.products.find(x=>x.id===id);
+    if (!p) return;
+    $("#dTag").textContent = p.tag || "";
+    $("#dName").textContent = p.name;
+    $("#dDesc").textContent = p.summary;
+    $("#dSpec").innerHTML = (p.specs||[]).map(s=>`<div><span>${s.k}</span><span>${s.v}</span></div>`).join("");
+    $("#dApps").innerHTML = (p.apps||[]).map(aid=>{
+      const a = DATA.applications.find(x=>x.id===aid);
+      return a ? `<span>${a.name}</span>` : "";
+    }).join("");
+    $("#dNotes").textContent = p.notes || "";
+    $("#dQuote").onclick = ()=>{
+      close();
+      const sel = $("#interestSelect");
+      [...sel.options].forEach(o => { if (o.text === p.name) o.selected = true; });
+    };
+    drawer.classList.add("on");
+    overlay.classList.add("on");
+    drawer.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  };
+  const close = ()=>{
+    drawer.classList.remove("on");
+    overlay.classList.remove("on");
+    drawer.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+  };
+  document.addEventListener("click",(e)=>{
+    const openBtn = e.target.closest("[data-open]");
+    if (openBtn){ open(openBtn.dataset.open); return; }
+    const q = e.target.closest("[data-quote]");
+    if (q){
+      const p = DATA.products.find(x=>x.id===q.dataset.quote);
+      if (p){
+        const sel = $("#interestSelect");
+        [...sel.options].forEach(o => { if (o.text === p.name) o.selected = true; });
+        document.getElementById("contact").scrollIntoView({ behavior:"smooth" });
+        setTimeout(()=>$("#fName").focus(), 700);
+      }
+      return;
+    }
+    if (e.target.closest("#dClose") || e.target === overlay) close();
+  });
+  document.addEventListener("keydown",(e)=>{ if (e.key === "Escape") close(); });
+}
+
+function initFilters(){
+  document.addEventListener("click",(e)=>{
+    const app = e.target.closest(".app");
+    if (app){
+      activeFilter = (activeFilter === app.dataset.app) ? "all" : app.dataset.app;
+      renderApplications(); renderFilterBar(); renderProducts();
+      document.getElementById("products").scrollIntoView({ behavior:"smooth" });
+      return;
+    }
+    const fb = e.target.closest("#filterBar button");
+    if (fb){
+      activeFilter = fb.dataset.f;
+      renderApplications(); renderFilterBar(); renderProducts();
+    }
+  });
+}
+
+function initNav(){
+  const nav = $("#nav"), burger = $("#burger");
+  burger.addEventListener("click",()=>{
+    const open = nav.classList.toggle("open");
+    burger.textContent = open ? "✕" : "☰";
+  });
+  nav.addEventListener("click",(e)=>{
+    if (e.target.tagName === "A" && window.innerWidth <= 1040){
+      nav.classList.remove("open"); burger.textContent = "☰";
+    }
+  });
+  const secs = ["top","products","applications","specs","about","faq"];
+  const spy = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if (en.isIntersecting){
+        const id = en.target.id;
+        $$("#nav a").forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#"+id));
+      }
+    });
+  }, { rootMargin:"-40% 0px -55% 0px" });
+  secs.forEach(id => { const el = document.getElementById(id); if (el) spy.observe(el); });
+}
+
+function initReveal(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if (en.isIntersecting){ en.target.classList.add("on"); io.unobserve(en.target); }
+    });
+  }, { threshold:.12 });
+  $$(".rv").forEach(el => io.observe(el));
+}
+
+function initProgress(){
+  const bar = $("#progress");
+  const upd = ()=>{
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+  };
+  window.addEventListener("scroll", upd, { passive:true });
+  window.addEventListener("resize", upd);
+  upd();
+}
+
+function initForm(){
+  const form = $("#inquiryForm"), msg = $("#formMsg"), btn = $("#submitBtn");
+  form.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    msg.className = "formmsg";
+    const payload = {
+      name: $("#fName").value.trim(),
+      email: $("#fEmail").value.trim(),
+      company: $("#fCompany").value.trim(),
+      country: $("#fCountry").value.trim(),
+      interest: $("#interestSelect").value,
+      message: $("#fMsg").value.trim(),
+      lang: LANG
+    };
+    if (!payload.name || !payload.email || !payload.country || !payload.message){
+      msg.className = "formmsg err"; msg.textContent = UI_T.form.err; return;
+    }
+    btn.disabled = true; btn.textContent = UI_T.form.sending;
+    try{
+      const res = await fetch("/api/inquiry", {
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("send failed");
+      msg.className = "formmsg ok"; msg.textContent = UI_T.form.ok;
+      form.reset();
+    }catch(err){
+      const body = encodeURIComponent(
+        `Name: ${payload.name}\nEmail: ${payload.email}\nCompany: ${payload.company}\nCountry: ${payload.country}\nInterest: ${payload.interest}\n\n${payload.message}`
+      );
+      window.location.href = `mailto:${DATA.site.email}?subject=Website Inquiry — ${encodeURIComponent(payload.name)}&body=${body}`;
+      msg.className = "formmsg ok"; msg.textContent = UI_T.form.fallback;
+    }finally{
+      btn.disabled = false; btn.textContent = UI_T.form.submit;
+    }
+  });
+}
+
+function initLangSwitch(){
+  $("#langSwitch").addEventListener("click", async (e)=>{
+    const btn = e.target.closest("button[data-lang]");
+    if (!btn || btn.dataset.lang === LANG) return;
+    LANG = btn.dataset.lang;
+    localStorage.setItem("yuhui_lang", LANG);
+    const url = new URL(location.href);
+    if (LANG === "en") url.searchParams.delete("lang");
+    else url.searchParams.set("lang", LANG);
+    history.replaceState(null, "", url.toString());
+    await boot();
+  });
+}
+
+async function boot(){
+  LANG = detectLang();
+  applyLang();
+  fillI18n();
+  await loadContent();
+  renderSite();
+  renderHero();
+  renderTrust();
+  renderApplications();
+  renderFilterBar();
+  renderProducts();
+  renderSpecs();
+  renderSteps();
+  renderAbout();
+  renderFaq();
+  initHero();
+}
+
+(async function main(){
+  $("#yr").textContent = new Date().getFullYear();
+  await boot();
+  initDrawer();
+  initFilters();
+  initNav();
+  initReveal();
+  initProgress();
+  initForm();
+  initLangSwitch();
+})();
+</script>
+</body>
+</html>

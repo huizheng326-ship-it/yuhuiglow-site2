@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUHUI · Admin Panel</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/logo.jpg">
+<style>
+  :root{
+    --blue:#0b5fff; --deep:#0a2e6e; --navy:#0d1b33; --sky:#e8f1ff;
+    --line:#e3e9f2; --txt:#2a3648; --dim:#68778c; --bg:#f4f7fc;
+    --ok:#0a8a4f; --err:#c0392b; --warn:#b45309;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Inter","Segoe UI",Roboto,sans-serif;color:var(--txt);background:var(--bg);line-height:1.6;font-size:14.5px}
+  button{font-family:inherit;cursor:pointer}
+  input,textarea,select{font-family:inherit}
+
+  .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#0a2e6e 0%,#124ab8 55%,#00b3ff 130%);position:relative;overflow:hidden}
+  .login-wrap::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:26px 26px}
+  .login-card{background:#fff;border-radius:16px;padding:44px 38px;width:100%;max-width:400px;box-shadow:0 30px 80px rgba(0,0,0,.35);position:relative;text-align:center}
+  .login-card img{height:64px;border-radius:10px;margin:0 auto 20px;display:block}
+  .login-card h1{font-size:22px;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px}
+  .login-card p{color:var(--dim);font-size:13.5px;margin-bottom:26px}
+  .login-card input{width:100%;padding:13px 15px;border:1px solid #d4deee;border-radius:9px;font-size:15px;outline:none;margin-bottom:14px;transition:.2s}
+  .login-card input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,95,255,.12)}
+  .login-card button{width:100%;background:var(--blue);color:#fff;border:none;padding:14px;border-radius:9px;font-size:15.5px;font-weight:700;transition:.25s}
+  .login-card button:hover{background:var(--deep)}
+  .login-card button:disabled{opacity:.6;cursor:wait}
+  .login-err{color:var(--err);font-size:13.5px;margin-top:14px;min-height:20px}
+
+  #appView{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+  @media(max-width:860px){#appView{grid-template-columns:1fr}}
+
+  .sidebar{background:var(--navy);color:#cbd6e6;padding:22px 0;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto}
+  @media(max-width:860px){.sidebar{position:static;height:auto;padding:14px 0}}
+  .side-brand{display:flex;align-items:center;gap:11px;padding:0 20px 22px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:12px}
+  .side-brand img{height:38px;border-radius:7px;background:#fff;padding:3px}
+  .side-brand b{color:#fff;font-size:15.5px;letter-spacing:.6px;display:block}
+  .side-brand span{font-size:10.5px;color:#7d8ea8}
+  .side-nav{display:flex;flex-direction:column;gap:2px;padding:0 12px;flex:1}
+  .side-nav button{background:none;border:none;color:#cbd6e6;text-align:left;padding:11px 14px;border-radius:9px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:11px;transition:.2s;width:100%}
+  .side-nav button:hover{background:rgba(255,255,255,.08);color:#fff}
+  .side-nav button.on{background:var(--blue);color:#fff}
+  .side-nav button .ic{font-size:17px;width:20px;text-align:center}
+  .side-foot{padding:14px 20px 0;border-top:1px solid rgba(255,255,255,.08);margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .side-foot a,.side-foot button{background:none;border:none;color:#7d8ea8;font-size:13px;text-align:left;text-decoration:none;padding:4px 0;transition:.2s}
+  .side-foot a:hover,.side-foot button:hover{color:#fff}
+  @media(max-width:860px){.side-nav{flex-direction:row;flex-wrap:wrap}.side-nav button{width:auto}}
+
+  .main{padding:32px 40px 80px;max-width:1100px}
+  @media(max-width:860px){.main{padding:22px 18px 60px}}
+  .topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+  .topbar h1{font-size:26px;color:var(--navy);letter-spacing:-.4px}
+  .topbar p{color:var(--dim);font-size:13.5px;margin-top:4px}
+  .topbar .actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+  .lang-switch{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
+  .lang-switch button{background:none;border:none;padding:7px 14px;border-radius:6px;font-size:13px;font-weight:700;color:var(--dim);transition:.2s}
+  .lang-switch button.on{background:var(--blue);color:#fff}
+  .lang-switch button:hover:not(.on){color:var(--blue)}
+
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(10,30,70,.04)}
+  .card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:14px;flex-wrap:wrap}
+  .card-head h3{font-size:16.5px;color:var(--navy)}
+
+  label{display:block;margin-bottom:14px}
+  label > span{display:block;font-size:12.5px;color:var(--dim);font-weight:600;letter-spacing:.4px;margin-bottom:6px;text-transform:uppercase}
+  label input,label textarea,label select{width:100%;padding:11px 13px;border:1px solid #d4deee;border-radius:8px;font-size:14.5px;background:#fff;color:var(--txt);outline:none;transition:.2s;font-family:inherit}
+  label input:focus,label textarea:focus,label select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,95,255,.12)}
+  label textarea{min-height:78px;resize:vertical;line-height:1.55}
+  [dir="rtl"] label input,[dir="rtl"] label textarea,[dir="rtl"] label select{text-align:right}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+  @media(max-width:700px){.row2,.row3{grid-template-columns:1fr}}
+
+  .btn{background:var(--blue);color:#fff;border:none;padding:11px 24px;border-radius:9px;font-size:14.5px;font-weight:700;transition:.25s}
+  .btn:hover{background:var(--deep);transform:translateY(-1px);box-shadow:0 8px 20px rgba(11,95,255,.28)}
+  .btn:disabled{opacity:.6;cursor:wait}
+  .btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}
+  .btn.ghost:hover{background:var(--sky);color:var(--deep);box-shadow:none}
+  .btn.danger{background:#fee;color:var(--err);border:1px solid #f5c6c6}
+  .btn.danger:hover{background:var(--err);color:#fff}
+  .btn.sm{padding:7px 14px;font-size:13px}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+
+  .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(120%);background:var(--navy);color:#fff;padding:13px 26px;border-radius:10px;font-size:14px;font-weight:600;box-shadow:0 14px 40px rgba(10,30,70,.35);transition:transform .35s cubic-bezier(.22,.8,.3,1);z-index:300;max-width:90vw;text-align:center}
+  .toast.on{transform:translateX(-50%) translateY(0)}
+  .toast.ok{background:#0a8a4f}
+  .toast.err{background:#c0392b}
+
+  .empty{text-align:center;padding:50px 20px;color:var(--dim)}
+  .empty .ic{font-size:44px;margin-bottom:12px;opacity:.55}
+  .empty p{font-size:14px}
+
+  .spec-row{display:grid;grid-template-columns:1fr 1.4fr auto;gap:10px;margin-bottom:9px;align-items:center}
+  @media(max-width:640px){.spec-row{grid-template-columns:1fr;gap:6px}}
+  .spec-row input{padding:9px 12px;border:1px solid #d4deee;border-radius:7px;font-size:14px;outline:none}
+  .spec-row input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,95,255,.1)}
+  .spec-row .rm{background:#fee;color:var(--err);border:1px solid #f5c6c6;border-radius:7px;width:38px;height:38px;font-size:17px;line-height:1;padding:0}
+  .spec-row .rm:hover{background:var(--err);color:#fff}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:24px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;position:relative;overflow:hidden}
+  .stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#00e0a4)}
+  .stat .lbl{font-size:12px;color:var(--dim);letter-spacing:1.2px;text-transform:uppercase;font-weight:600}
+  .stat .val{font-size:30px;color:var(--navy);font-weight:800;margin-top:8px;letter-spacing:-.5px}
+  .stat .sub{font-size:12.5px;color:var(--dim);margin-top:4px}
+
+  table.inq{width:100%;border-collapse:collapse;font-size:13.5px}
+  table.inq th{background:var(--sky);color:var(--deep);text-align:left;padding:11px 14px;font-size:12px;letter-spacing:.6px;text-transform:uppercase;font-weight:700}
+  table.inq td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.inq tr:hover td{background:#fafcff}
+
+  .formmsg{display:none;padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:16px}
+  .formmsg.ok{display:block;background:#e6f7ef;color:#0a8a4f;border:1px solid #b8e6ce}
+  .formmsg.err{display:block;background:#fdecec;color:#c0392b;border:1px solid #f5c6c6}
+</style>
+</head>
+<body>
+
+<div id="loginView" class="login-wrap">
+  <div class="login-card">
+    <img src="/logo.jpg" alt="YUHUI">
+    <h1>YUHUI Admin</h1>
+    <p>Sign in to manage your website content</p>
+    <form id="loginForm">
+      <input type="password" id="pwd" placeholder="Admin password" autocomplete="current-password" required>
+      <button type="submit" id="loginBtn">Sign In</button>
+      <div class="login-err" id="loginErr"></div>
+    </form>
+  </div>
+</div>
+
+<div id="appView" hidden>
+  <aside class="sidebar">
+    <div class="side-brand">
+      <img src="/logo.jpg" alt="YUHUI">
+      <div><b>YUHUI Admin</b><span>Content Manager</span></div>
+    </div>
+    <nav class="side-nav" id="sideNav">
+      <button data-tab="dashboard" class="on"><span class="ic">📊</span> Dashboard</button>
+      <button data-tab="hero"><span class="ic">🖼️</span> Hero Slides</button>
+      <button data-tab="applications"><span class="ic">🏭</span> Applications</button>
+      <button data-tab="products"><span class="ic">📦</span> Products</button>
+      <button data-tab="specs"><span class="ic">📋</span> Spec Table</button>
+      <button data-tab="faq"><span class="ic">❓</span> FAQ</button>
+      <button data-tab="site"><span class="ic">⚙️</span> Site Info</button>
+      <button data-tab="password"><span class="ic">🔐</span> Password</button>
+      <button data-tab="inquiries"><span class="ic">📨</span> Inquiries</button>
+    </nav>
+    <div class="side-foot">
+      <a href="/" target="_blank">↗ View website</a>
+      <button id="logoutBtn">⎋ Sign out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1 id="pageTitle">Dashboard</h1>
+        <p id="pageSub">Overview of your website content</p>
+      </div>
+      <div class="actions" id="pageActions">
+        <div class="lang-switch" id="langSwitch">
+          <button data-lang="en" class="on">EN</button>
+          <button data-lang="ar">ع</button>
+        </div>
+      </div>
+    </div>
+    <div id="panel"></div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+let DATA = null;
+let currentTab = "dashboard";
+let currentLang = "en";
+let inquiries = [];
+
+const TABS = {
+  dashboard:    { title: "Dashboard",       sub: "Overview of your website content" },
+  hero:         { title: "Hero Slides",     sub: "The three rotating banners at the top of your homepage" },
+  applications: { title: "Applications",    sub: "Industry cards shown above the product grid" },
+  products:     { title: "Products",        sub: "Product cards, specifications and application tags" },
+  specs:        { title: "Spec Table",      sub: "The buyer's guide grade comparison table" },
+  faq:          { title: "FAQ",             sub: "Frequently asked questions shown near the bottom" },
+  site:         { title: "Site Info",       sub: "Company contact details used across the website" },
+  password:     { title: "Change Password", sub: "Update your admin login password" },
+  inquiries:    { title: "Inquiries",       sub: "Messages submitted through the contact form" }
+};
+
+function toast(msg, kind="ok"){
+  const t = $("#toast");
+  t.className = "toast " + kind;
+  t.textContent = msg;
+  t.classList.add("on");
+  clearTimeout(t._tid);
+  t._tid = setTimeout(()=>t.classList.remove("on"), 2800);
+}
+
+async function checkSession(){
+  try{
+    const r = await fetch("/api/session", { credentials: "same-origin" });
+    const j = await r.json();
+    return !!j.ok;
+  }catch{ return false; }
+}
+
+$("#loginForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const btn = $("#loginBtn"), err = $("#loginErr");
+  btn.disabled = true; btn.textContent = "Signing in…"; err.textContent = "";
+  try{
+    const r = await fetch("/api/login", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: $("#pwd").value })
+    });
+    const j = await r.json();
+    if (j.ok){ await enterApp(); }
+    else { err.textContent = j.error || "Login failed"; }
+  }catch(err2){
+    err.textContent = "Network error — please try again";
+  }finally{
+    btn.disabled = false; btn.textContent = "Sign In";
+  }
+});
+
+$("#logoutBtn").addEventListener("click", async ()=>{
+  await fetch("/api/logout", { method: "POST", credentials: "same-origin" });
+  location.reload();
+});
+
+$("#langSwitch").addEventListener("click", async (e)=>{
+  const btn = e.target.closest("button[data-lang]");
+  if (!btn) return;
+  currentLang = btn.dataset.lang;
+  $$("#langSwitch button").forEach(b => b.classList.toggle("on", b.dataset.lang === currentLang));
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = currentLang;
+  await loadContent();
+  renderTab(currentTab);
+});
+
+async function enterApp(){
+  $("#loginView").hidden = true;
+  $("#appView").hidden = false;
+  await loadContent();
+  renderTab("dashboard");
+}
+
+async function loadContent(){
+  const r = await fetch("/api/content?lang=" + currentLang, { credentials: "same-origin" });
+  DATA = await r.json();
+  DATA.hero = DATA.hero || [];
+  DATA.applications = DATA.applications || [];
+  DATA.products = DATA.products || [];
+  DATA.specs = DATA.specs || [];
+  DATA.faq = DATA.faq || [];
+  DATA.site = DATA.site || {};
+}
+
+async function saveSection(payload, label){
+  payload._lang = currentLang;
+  try{
+    const r = await fetch("/api/content", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    if (r.status === 401){ toast("Session expired — please sign in again", "err"); location.reload(); return false; }
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error || "Save failed");
+    toast(label + " saved (" + currentLang.toUpperCase() + ")");
+    return true;
+  }catch(e){
+    toast("Save failed: " + e.message, "err");
+    return false;
+  }
+}
+
+$("#sideNav").addEventListener("click", (e)=>{
+  const btn = e.target.closest("button[data-tab]");
+  if (!btn) return;
+  renderTab(btn.dataset.tab);
+});
+
+function renderTab(tab){
+  currentTab = tab;
+  $$("#sideNav button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
+  const meta = TABS[tab];
+  $("#pageTitle").textContent = meta.title;
+  $("#pageSub").textContent = meta.sub;
+
+  const panel = $("#panel");
+  if (tab === "dashboard")    panel.innerHTML = renderDashboard();
+  if (tab === "hero")         panel.innerHTML = renderHeroTab();
+  if (tab === "applications") panel.innerHTML = renderAppsTab();
+  if (tab === "products")     panel.innerHTML = renderProductsTab();
+  if (tab === "specs")        panel.innerHTML = renderSpecsTab();
+  if (tab === "faq")          panel.innerHTML = renderFaqTab();
+  if (tab === "site")         panel.innerHTML = renderSiteTab();
+  if (tab === "password")     panel.innerHTML = renderPasswordTab();
+  if (tab === "inquiries")    loadInquiries();
+
+  bindTab(tab);
+}
+
+function renderDashboard(){
+  const s = DATA.site;
+  return `
+    <div class="stat-grid">
+      <div class="stat"><div class="lbl">Products</div><div class="val">${DATA.products.length}</div><div class="sub">Active on homepage</div></div>
+      <div class="stat"><div class="lbl">Hero Slides</div><div class="val">${DATA.hero.length}</div><div class="sub">Rotating banners</div></div>
+      <div class="stat"><div class="lbl">Applications</div><div class="val">${DATA.applications.length}</div><div class="sub">Industry filters</div></div>
+      <div class="stat"><div class="lbl">FAQ Entries</div><div class="val">${DATA.faq.length}</div><div class="sub">Questions answered</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Editing language: ${currentLang === "ar" ? "العربية" : "English"}</h3></div>
+      <p style="color:var(--dim);font-size:13.5px">使用右上角 EN / ع 按钮切换语言。切换后编辑并保存的是对应语言的内容，前台通过语言选择器加载。</p>
+    </div>
+    <div class="card">
+      <div class="card-head"><h3>Contact details in use</h3></div>
+      <p style="color:var(--dim);font-size:13.5px">
+        <b style="color:var(--navy)">${esc(s.company||"—")}</b><br>
+        ${esc(s.phone||"—")} · ${esc(s.email||"—")}<br>
+        ${esc(s.address||"—")}
+      </p>
+    </div>
+  `;
+}
+
+function renderHeroTab(){
+  return `
+    ${DATA.hero.map((h, i) => `
+      <div class="card">
+        <div class="card-head">
+          <h3>Slide ${i+1}</h3>
+          <button class="btn danger sm" data-rm-hero="${i}">Remove</button>
+        </div>
+        <label><span>Kicker</span><input data-hero="${i}" data-key="kicker" value="${esc(h.kicker)}"></label>
+        <label><span>Headline</span><textarea data-hero="${i}" data-key="title">${esc(h.title)}</textarea></label>
+        <label><span>Subtitle</span><textarea data-hero="${i}" data-key="text">${esc(h.text)}</textarea></label>
+        <div class="row2">
+          <label><span>Background</span>
+            <select data-hero="${i}" data-key="bg">
+              ${["s1","s2","s3"].map(v => `<option value="${v}" ${h.bg===v?"selected":""}>${v}</option>`).join("")}
+            </select>
+          </label>
+          <label><span>Glow color (CSS)</span><input data-hero="${i}" data-key="glow" value="${esc(h.glow)}"></label>
+        </div>
+      </div>
+    `).join("")}
+    <div class="btn-row">
+      <button class="btn ghost" id="addHero">+ Add slide</button>
+      <button class="btn" id="saveHero">Save Hero Slides</button>
+    </div>
+  `;
+}
+
+function renderAppsTab(){
+  return `
+    ${DATA.applications.map((a, i) => `
+      <div class="card">
+        <div class="card-head">
+          <h3>${esc(a.icon)} ${esc(a.name)}</h3>
+          <button class="btn danger sm" data-rm-app="${i}">Remove</button>
+        </div>
+        <div class="row3">
+          <label><span>ID (no spaces)</span><input data-app="${i}" data-key="id" value="${esc(a.id)}"></label>
+          <label><span>Icon</span><input data-app="${i}" data-key="icon" value="${esc(a.icon)}"></label>
+          <label><span>Name</span><input data-app="${i}" data-key="name" value="${esc(a.name)}"></label>
+        </div>
+        <label><span>Description</span><input data-app="${i}" data-key="desc" value="${esc(a.desc)}"></label>
+      </div>
+    `).join("")}
+    <div class="btn-row">
+      <button class="btn ghost" id="addApp">+ Add application</button>
+      <button class="btn" id="saveApps">Save Applications</button>
+    </div>
+  `;
+}
+
+function renderProductsTab(){
+  const appOptions = DATA.applications.map(a => a.id);
+  return `
+    ${DATA.products.map((p, i) => `
+      <div class="card">
+        <div class="card-head">
+          <h3>${esc(p.icon)} ${esc(p.name)}</h3>
+          <button class="btn danger sm" data-rm-product="${i}">Remove</button>
+        </div>
+        <div class="row2">
+          <label><span>ID</span><input data-p="${i}" data-key="id" value="${esc(p.id)}"></label>
+          <label><span>Badge / tag</span><input data-p="${i}" data-key="tag" value="${esc(p.tag)}"></label>
+        </div>
+        <div class="row3">
+          <label><span>Icon</span><input data-p="${i}" data-key="icon" value="${esc(p.icon)}"></label>
+          <label><span>Card style</span>
+            <select data-p="${i}" data-key="grad">
+              ${["g1","g2","g3","g4"].map(v => `<option value="${v}" ${p.grad===v?"selected":""}>${v}</option>`).join("")}
+            </select>
+          </label>
+          <label><span>Name</span><input data-p="${i}" data-key="name" value="${esc(p.name)}"></label>
+        </div>
+        <label><span>Summary</span><textarea data-p="${i}" data-key="summary">${esc(p.summary)}</textarea></label>
+        <label><span>Application IDs (comma separated)</span>
+          <input data-p="${i}" data-key="apps" value="${esc((p.apps||[]).join(", "))}">
+        </label>
+        <p style="color:var(--dim);font-size:12.5px;margin:-8px 0 16px">Available: ${appOptions.map(x=>`<code>${esc(x)}</code>`).join(", ")}</p>
+        <span style="display:block;font-size:12.5px;color:var(--dim);font-weight:600;letter-spacing:.4px;margin-bottom:8px;text-transform:uppercase">Specifications</span>
+        <div>
+          ${(p.specs||[]).map((s, k) => `
+            <div class="spec-row">
+              <input data-p="${i}" data-spec="${k}" data-key="k" value="${esc(s.k)}" placeholder="Label">
+              <input data-p="${i}" data-spec="${k}" data-key="v" value="${esc(s.v)}" placeholder="Value">
+              <button class="rm" data-rm-spec="${i}:${k}">×</button>
+            </div>
+          `).join("")}
+        </div>
+        <button class="btn ghost sm" data-add-spec="${i}" style="margin-top:4px">+ Add row</button>
+        <label style="margin-top:18px"><span>Ordering notes</span><textarea data-p="${i}" data-key="notes">${esc(p.notes)}</textarea></label>
+      </div>
+    `).join("")}
+    <div class="btn-row">
+      <button class="btn ghost" id="addProduct">+ Add product</button>
+      <button class="btn" id="saveProducts">Save Products</button>
+    </div>
+  `;
+}
+
+function renderSpecsTab(){
+  return `
+    ${DATA.specs.map((s, i) => `
+      <div class="card">
+        <div class="card-head">
+          <h3>${esc(s.grade)}</h3>
+          <button class="btn danger sm" data-rm-spec-row="${i}">Remove</button>
+        </div>
+        <div class="row3">
+          <label><span>Grade</span><input data-s="${i}" data-key="grade" value="${esc(s.grade)}"></label>
+          <label><span>Glow color</span><input data-s="${i}" data-key="color" value="${esc(s.color)}"></label>
+          <label><span>Particle / mesh</span><input data-s="${i}" data-key="mesh" value="${esc(s.mesh)}"></label>
+        </div>
+        <div class="row3">
+          <label><span>Afterglow</span><input data-s="${i}" data-key="glow" value="${esc(s.glow)}"></label>
+          <label><span>Typical application</span><input data-s="${i}" data-key="use" value="${esc(s.use)}"></label>
+          <label><span>Badge</span><input data-s="${i}" data-key="badge" value="${esc(s.badge)}"></label>
+        </div>
+      </div>
+    `).join("")}
+    <div class="btn-row">
+      <button class="btn ghost" id="addSpec">+ Add grade</button>
+      <button class="btn" id="saveSpecs">Save Spec Table</button>
+    </div>
+  `;
+}
+
+function renderFaqTab(){
+  return `
+    ${DATA.faq.map((f, i) => `
+      <div class="card">
+        <div class="card-head">
+          <h3>Question ${i+1}</h3>
+          <button class="btn danger sm" data-rm-faq="${i}">Remove</button>
+        </div>
+        <label><span>Question</span><input data-f="${i}" data-key="q" value="${esc(f.q)}"></label>
+        <label><span>Answer</span><textarea data-f="${i}" data-key="a">${esc(f.a)}</textarea></label>
+      </div>
+    `).join("")}
+    <div class="btn-row">
+      <button class="btn ghost" id="addFaq">+ Add FAQ</button>
+      <button class="btn" id="saveFaq">Save FAQ</button>
+    </div>
+  `;
+}
+
+function renderSiteTab(){
+  const s = DATA.site;
+  return `
+    <div class="card">
+      <div class="card-head"><h3>Company &amp; contact</h3></div>
+      <label><span>Company name</span><input data-site="company" value="${esc(s.company)}"></label>
+      <div class="row2">
+        <label><span>Phone (display)</span><input data-site="phone" value="${esc(s.phone)}"></label>
+        <label><span>Phone (raw digits)</span><input data-site="phoneRaw" value="${esc(s.phoneRaw)}"></label>
+      </div>
+      <div class="row2">
+        <label><span>Email</span><input data-site="email" value="${esc(s.email)}"></label>
+        <label><span>LinkedIn URL</span><input data-site="linkedin" value="${esc(s.linkedin)}"></label>
+      </div>
+      <label><span>Address</span><input data-site="address" value="${esc(s.address)}"></label>
+      <label><span>Utility bar tagline</span><input data-site="utilTag" value="${esc(s.utilTag)}"></label>
+    </div>
+    <div class="btn-row"><button class="btn" id="saveSite">Save Site Info</button></div>
+  `;
+}
+
+function renderPasswordTab(){
+  return `
+    <div class="card">
+      <div class="card-head"><h3>Change admin password</h3></div>
+      <p style="color:var(--dim);font-size:13.5px;margin-bottom:20px">
+        新密码至少 8 位，必须同时包含字母和数字。修改成功后，所有设备会被强制退出登录，需要用新密码重新登录。
+      </p>
+      <div class="formmsg" id="pwdMsg"></div>
+      <label><span>Current password</span><input type="password" id="pwdCurrent" autocomplete="current-password"></label>
+      <label><span>New password</span><input type="password" id="pwdNew" autocomplete="new-password"></label>
+      <label><span>Confirm new password</span><input type="password" id="pwdConfirm" autocomplete="new-password"></label>
+      <div class="btn-row">
+        <button class="btn" id="pwdSave">Update Password</button>
+      </div>
+    </div>
+  `;
+}
+
+async function loadInquiries(){
+  $("#panel").innerHTML = `<div class="empty"><div class="ic">⏳</div><p>Loading inquiries…</p></div>`;
+  try{
+    const r = await fetch("/api/inquiry", { credentials: "same-origin" });
+    if (r.status === 401){ toast("Session expired", "err"); location.reload(); return; }
+    const j = await r.json();
+    inquiries = j.items || [];
+  }catch{ inquiries = []; }
+  renderInquiries();
+}
+
+function renderInquiries(){
+  const panel = $("#panel");
+  if (!inquiries.length){
+    panel.innerHTML = `<div class="empty"><div class="ic">📭</div><p>No inquiries yet.</p></div>`;
+    return;
+  }
+  panel.innerHTML = `
+    <div class="card">
+      <div class="card-head">
+        <h3>${inquiries.length} total</h3>
+        <button class="btn ghost sm" id="exportCsv">Export CSV</button>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="inq">
+          <thead>
+            <tr><th>Date</th><th>Name</th><th>Email</th><th>Country</th><th>Lang</th><th>Interest</th><th>Message</th><th></th></tr>
+          </thead>
+          <tbody>
+            ${inquiries.map(q => `
+              <tr>
+                <td style="white-space:nowrap;font-size:12.5px;color:var(--dim)">${esc(new Date(q.ts).toLocaleString())}</td>
+                <td><b>${esc(q.name)}</b></td>
+                <td><a href="mailto:${esc(q.email)}" style="color:var(--blue)">${esc(q.email)}</a></td>
+                <td>${esc(q.country||"—")}</td>
+                <td>${esc((q.lang||"en").toUpperCase())}</td>
+                <td style="font-size:12.5px">${esc(q.interest||"—")}</td>
+                <td style="max-width:280px;font-size:13px">${esc((q.message||"").slice(0,200))}</td>
+                <td><button class="btn danger sm" data-rm-inq="${esc(q.id)}">Delete</button></td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `;
+  $("#exportCsv").addEventListener("click", exportCsv);
+  $$("[data-rm-inq]").forEach(b => b.addEventListener("click", async ()=>{
+    if (!confirm("Delete this inquiry?")) return;
+    const r = await fetch("/api/inquiry?id=" + encodeURIComponent(b.dataset.rmInq), { method: "DELETE", credentials: "same-origin" });
+    if (r.ok){ toast("Deleted"); loadInquiries(); }
+    else { toast("Delete failed", "err"); }
+  }));
+}
+
+function exportCsv(){
+  const cols = ["ts","name","email","company","country","interest","lang","message","ip"];
+  const esc2 = v => `"${String(v ?? "").replace(/"/g,'""')}"`;
+  const lines = [cols.join(",")];
+  inquiries.forEach(q => lines.push(cols.map(c => esc2(q[c])).join(",")));
+  const blob = new Blob(["\uFEFF" + lines.join("\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "yuhui-inquiries-" + new Date().toISOString().slice(0,10) + ".csv";
+  a.click();
+}
+
+function bindTab(tab){
+  if (tab === "hero"){
+    $$("[data-hero]").forEach(el => el.addEventListener("input", ()=>{
+      DATA.hero[+el.dataset.hero][el.dataset.key] = el.value;
+    }));
+    $$("[data-rm-hero]").forEach(b => b.addEventListener("click", ()=>{
+      if (!confirm("Remove this slide?")) return;
+      DATA.hero.splice(+b.dataset.rmHero, 1); renderTab("hero");
+    }));
+    $("#addHero")?.addEventListener("click", ()=>{
+      DATA.hero.push({ kicker:"New", title:"Headline", text:"Subtitle", bg:"s1", glow:"rgba(160,255,200,.55)" });
+      renderTab("hero");
+    });
+    $("#saveHero")?.addEventListener("click", async (e)=>{
+      e.target.disabled = true; e.target.textContent = "Saving…";
+      await saveSection({ hero: DATA.hero }, "Hero slides");
+      e.target.disabled = false; e.target.textContent = "Save Hero Slides";
+    });
+  }
+  if (tab === "applications"){
+    $$("[data-app]").forEach(el => el.addEventListener("input", ()=>{
+      DATA.applications[+el.dataset.app][el.dataset.key] = el.value;
+    }));
+    $$("[data-rm-app]").forEach(b => b.addEventListener("click", ()=>{
+      if (!confirm("Remove?")) return;
+      DATA.applications.splice(+b.dataset.rmApp, 1); renderTab("applications");
+    }));
+    $("#addApp")?.addEventListener("click", ()=>{
+      DATA.applications.push({ id:"new-" + Date.now().toString(36), icon:"⭐", name:"New", desc:"" });
+      renderTab("applications");
+    });
+    $("#saveApps")?.addEventListener("click", async (e)=>{
+      e.target.disabled = true; e.target.textContent = "Saving…";
+      await saveSection({ applications: DATA.applications }, "Applications");
+      e.target.disabled = false; e.target.textContent = "Save Applications";
+    });
+  }
+  if (tab === "products"){
+    $$("[data-p]").forEach(el => el.addEventListener("input", ()=>{
+      const i = +el.dataset.p;
+      if (el.dataset.spec !== undefined){
+        DATA.products[i].specs[+el.dataset.spec][el.dataset.key] = el.value;
+      } else if (el.dataset.key === "apps"){
+        DATA.products[i].apps = el.value.split(",").map(x => x.trim()).filter(Boolean);
+      } else {
+        DATA.products[i][el.dataset.key] = el.value;
+      }
+    }));
+    $$("[data-rm-product]").forEach(b => b.addEventListener("click", ()=>{
+      if (!confirm("Remove?")) return;
+      DATA.products.splice(+b.dataset.rmProduct, 1); renderTab("products");
+    }));
+    $$("[data-add-spec]").forEach(b => b.addEventListener("click", ()=>{
+      const i = +b.dataset.addSpec;
+      DATA.products[i].specs = DATA.products[i].specs || [];
+      DATA.products[i].specs.push({ k:"New", v:"Value" });
+      renderTab("products");
+    }));
+    $$("[data-rm-spec]").forEach(b => b.addEventListener("click", ()=>{
+      const [i, k] = b.dataset.rmSpec.split(":").map(Number);
+      DATA.products[i].specs.splice(k, 1); renderTab("products");
+    }));
+    $("#addProduct")?.addEventListener("click", ()=>{
+      DATA.products.push({ id:"p-" + Date.now().toString(36), name:"New product", tag:"", icon:"✨", grad:"g1", apps:[], summary:"", specs:[{k:"Spec",v:"Value"}], notes:"" });
+      renderTab("products");
+    });
+    $("#saveProducts")?.addEventListener("click", async (e)=>{
+      e.target.disabled = true; e.target.textContent = "Saving…";
+      await saveSection({ products: DATA.products }, "Products");
+      e.target.disabled = false; e.target.textContent = "Save Products";
+    });
+  }
+  if (tab === "specs"){
+    $$("[data-s]").forEach(el => el.addEventListener("input", ()=>{
+      DATA.specs[+el.dataset.s][el.dataset.key] = el.value;
+    }));
+    $$("[data-rm-spec-row]").forEach(b => b.addEventListener("click", ()=>{
+      if (!confirm("Remove?")) return;
+      DATA.specs.splice(+b.dataset.rmSpecRow, 1); renderTab("specs");
+    }));
+    $("#addSpec")?.addEventListener("click", ()=>{
+      DATA.specs.push({ grade:"YH-NEW", color:"Blue-Green", mesh:"400 mesh", glow:"8–10 h", use:"", badge:"" });
+      renderTab("specs");
+    });
+    $("#saveSpecs")?.addEventListener("click", async (e)=>{
+      e.target.disabled = true; e.target.textContent = "Saving…";
+      await saveSection({ specs: DATA.specs }, "Spec table");
+      e.target.disabled = false; e.target.textContent = "Save Spec Table";
+    });
+  }
+  if (tab === "faq"){
+    $$("[data-f]").forEach(el => el.addEventListener("input", ()=>{
+      DATA.faq[+el.dataset.f][el.dataset.key] = el.value;
+    }));
+    $$("[data-rm-faq]").forEach(b => b.addEventListener("click", ()=>{
+      if (!confirm("Remove?")) return;
+      DATA.faq.splice(+b.dataset.rmFaq, 1); renderTab("faq");
+    }));
+    $("#addFaq")?.addEventListener("click", ()=>{
+      DATA.faq.push({ q:"New question", a:"Answer." }); renderTab("faq");
+    });
+    $("#saveFaq")?.addEventListener("click", async (e)=>{
+      e.target.disabled = true; e.target.textContent = "Saving…";
+      await saveSection({ faq: DATA.faq }, "FAQ");
+      e.target.disabled = false; e.target.textContent = "Save FAQ";
+    });
+  }
+  if (tab === "site"){
+    $$("[data-site]").forEach(el => el.addEventListener("input", ()=>{
+      DATA.site[el.dataset.site] = el.value;
+    }));
+    $("#saveSite")?.addEventListener("click", async (e)=>{
+      e.target.disabled = true; e.target.textContent = "Saving…";
+      await saveSection({ site: DATA.site }, "Site info");
+      e.target.disabled = false; e.target.textContent = "Save Site Info";
+    });
+  }
+  if (tab === "password"){
+    $("#pwdSave")?.addEventListener("click", async (e)=>{
+      const msg = $("#pwdMsg");
+      msg.className = "formmsg";
+      msg.textContent = "";
+
+      const current = $("#pwdCurrent").value.trim();
+      const np = $("#pwdNew").value.trim();
+      const cf = $("#pwdConfirm").value.trim();
+
+      if (!current || !np || !cf){
+        msg.className = "formmsg err";
+        msg.textContent = "All fields are required";
+        return;
+      }
+      if (np !== cf){
+        msg.className = "formmsg err";
+        msg.textContent = "New passwords do not match";
+        return;
+      }
+      if (np.length < 8){
+        msg.className = "formmsg err";
+        msg.textContent = "New password must be at least 8 characters";
+        return;
+      }
+      if (!/[A-Za-z]/.test(np) || !/[0-9]/.test(np)){
+        msg.className = "formmsg err";
+        msg.textContent = "Password must contain both letters and numbers";
+        return;
+      }
+
+      e.target.disabled = true; e.target.textContent = "Updating…";
+      try{
+        const r = await fetch("/api/change-password", {
+          method: "POST",
+          credentials: "same-origin",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ current, new: np, confirm: cf })
+        });
+        const j = await r.json();
+        if (!j.ok) throw new Error(j.error || "Update failed");
+        msg.className = "formmsg ok";
+        msg.textContent = "Password updated — signing you out…";
+        toast("Password updated", "ok");
+        setTimeout(()=>location.reload(), 1200);
+      }catch(err){
+        msg.className = "formmsg err";
+        msg.textContent = err.message;
+        e.target.disabled = false;
+        e.target.textContent = "Update Password";
+      }
+    });
+  }
+}
+
+(async function boot(){
+  const ok = await checkSession();
+  if (ok) await enterApp();
+})();
+</script>
+</body>
+</html>
